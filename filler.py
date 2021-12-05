@@ -1,4 +1,6 @@
 from random import choice
+from datetime import datetime, timedelta
+from pprint import pprint
 
 from faker import Faker
 from db import fetch_many, fetch_by_id
@@ -189,6 +191,62 @@ class SatieFaker(MainFaker):
         result = choice(options)
         return f"тренер {result} квалификационной категории"   
 
+
+class TanyaFaker(MainFaker):
+    def __init__(self):
+        super().__init__()
+        self.unique = {
+            'category': set(),
+        }
+        self.date_in = ''
+        self.date_out = ''
+        self.category = ''
+        self.property = ''
+        self._category = {
+            'стандарт': {
+                1: ('минимальная мебель (кровать, шкаф и тумбочка); минимум принадлежностей в ванной; уборка раз в три дня; смена белья раз в неделю.', 3500),
+                2: ('минимальная мебель (кровать, шкаф и тумбочка); минимум принадлежностей в ванной; уборка раз в три дня; смена белья раз в неделю.', 5000),
+            },
+            'люкс': {
+                1: ('наличие телевизора и мини-бара; наличие нескольких комбинированных источников освещения (потолочное, настольное, прикроватное); наличие кровати размером не менее 90 на 200 см; наличие халата, тапочек, полотенец, фена, умывальных принадлежностей; уборка каждый день.', 10500),
+                2: ('наличие телевизора и мини-бара; наличие нескольких комбинированных источников освещения (потолочное, настольное, прикроватное); наличие кровати размером не менеe 160 на 200; наличие халата, тапочек, полотенец, фена, умывальных принадлежностей; уборка каждый день.', 15000),
+            },
+            'президентский люкс': {
+                1: ('наличие мини-бара, сейфа, телевизора, кондиционера, капсульной кофемашины; двуспальная кровать не менее 200 на 220; наличие халата, тапочек, полотенец, фена, люксовых умывальных принадлежностей; теплый пол в ванной комнате, джакузи, сауна; гипоаллергенные постельные принадлежности; уборка 2 раза в день и бесплатно при вызове; рабочий стол; парковочное место в подземном паркинге бесплатно.', 45000),
+                2: ('наличие мини-бара, сейфа, телевизора, кондиционера, капсульной кофемашины; двуспальная кровать не менее 200 на 220; наличие халата, тапочек, полотенец, фена, люксовых умывальных принадлежностей; теплый пол в ванной комнате, джакузи, сауна; гипоаллергенные постельные принадлежности; уборка 2 раза в день и бесплатно при вызове; рабочий стол; парковочное место в подземном паркинге бесплатно.', 70000),
+            },
+        }
+    
+    def category_classif(self): 
+        self.category = self.f.random_element(self._category.keys())
+        self.property = self.f.random_int(min=1, max=2)
+        while (self.category, self.property) in self.unique['category'] and len(self.unique['category']) != len(self._category)*2:
+            self.category = self.f.random_element(self._category.keys())
+            self.property = self.f.random_int(min=1, max=2)
+        self.unique['category'].add((self.category, self.property))
+        return self.category
+
+    def category_desc(self): 
+        return self._category[self.category][self.property][0]
+
+    def category_price(self):
+        return self._category[self.category][self.property][1]
+
+    def room_date_in(self):
+        self.date_in = self.f.date_between('-3M', '+6M')
+        return self.date_in
+
+    def room_date_out(self): 
+        start_date = datetime(self.date_in.year, self.date_in.month, self.date_in.day)
+        self.date_out = self.f.date_between(start_date+timedelta(days=1), start_date+timedelta(days=90))
+        return self.date_out
+
+    def reservation_date(self): 
+        self.room_id = self.f.random_element(fetch_many('room'))[0]
+        date_in = fetch_by_id('room', self.room_id, attr='date_in')[0]
+        start_date = datetime(date_in.year, date_in.month, date_in.day)
+        return self.f.date_between(start_date-timedelta(days=14), start_date-timedelta(days=1))
+
 class MyFaker(MainFaker):
     
     def __init__(self):
@@ -200,12 +258,16 @@ class MyFaker(MainFaker):
 
 def main():
 #    f = MyFaker()
-    f = SatieFaker()
-    #print(f._get_methods().keys())
-    print(f.halls_services.values())
-    for i in range(10):
-        print(f.timetable())
+#    f = SatieFaker()
+    f = TanyaFaker()
+    print(f._get_methods().keys())
+    for i in range(6):
+        #print(f'Дата въезда: {f.room_date_in()}, Дата бронирования: {f.reservation_date()}, Дата выезда: {f.room_date_out()}')
         #print(f.sub_name(), f.sub_price())
+        print(f.category_classif())
+        #print(f.category_desc()) 
+        print(f.category_price())
+        print()
 
 
 if __name__ == '__main__':

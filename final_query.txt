@@ -1,27 +1,22 @@
 9
 timetable
-1
-n
+1 0
 timetable time
 6
 
 discount
-1
-n
+1 0
 discount amount
 5
 
 hall
-1
-y
-1
+1 1
 hall name
 timetable
 6
 
 trainer
-7
-n
+7 0
 name name
 gender gender
 dob dob
@@ -32,9 +27,7 @@ addr addr
 5
 
 service
-3
-y
-1
+3 1
 service_name name
 service_price price
 service_dur dur
@@ -42,35 +35,27 @@ hall
 10
 
 service_trainer
-0
-y
-2
+0 2
 service
 trainer
 15
 
 subscription
-2
-y
-1
+2 1
 sub_name name
 sub_price price
 service
 15
 
 customer
-2
-y
-1
+2 1
 name name
 tel tel
 discount
 20
 
 customer_subscription
-0
-y
-2
+0 2
 customer
 subscription
 30
