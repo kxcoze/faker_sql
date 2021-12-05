@@ -49,12 +49,9 @@ CREATE TABLE IF NOT EXISTS Trainer (
   );
 
 CREATE TABLE IF NOT EXISTS Category_Percent (
+	PRIMARY KEY (trainer_category),
 	trainer_category VARCHAR(70),
-	percent INT,
-	PRIMARY KEY (trainer_category)
-		REFERENCES TO Trainer(trainer_category)
-		ON UPDATE
-		ON DELETE CASCADE
+	percent INT
 );
 
 CREATE TABLE IF NOT EXISTS Service (
@@ -71,10 +68,10 @@ CREATE TABLE IF NOT EXISTS Service (
   );
  
 CREATE TABLE IF NOT EXISTS Service_Trainer (
-	service_id INT REFERENCES TO Service ON UPDATE CASCADE ON DELETE CASCADE,
-	trainer_id INT REFERENCES TO Trainer ON UPDATE CASCADE ON DELETE CASCADE,
-	CONSTRAINT service_trainer
-		PRIMARY KEY service_trainer_pk (service_id, trainer_id)
+	service_id INT REFERENCES Service ON UPDATE CASCADE ON DELETE CASCADE,
+	trainer_id INT REFERENCES Trainer ON UPDATE CASCADE ON DELETE CASCADE,
+	CONSTRAINT service_trainer_pk
+		PRIMARY KEY (service_id, trainer_id)
 );
 
 CREATE TABLE IF NOT EXISTS Subscription (
@@ -86,7 +83,7 @@ CREATE TABLE IF NOT EXISTS Subscription (
 	
 	FOREIGN KEY (service_id)
 		REFERENCES Service(service_id)
-		ON UPDATE 
+		ON UPDATE CASCADE
 		ON DELETE CASCADE
 	-- FOREIGN KEY service_id
   );
@@ -100,13 +97,13 @@ CREATE TABLE IF NOT EXISTS Customer (
     discount_id INT,
     FOREIGN KEY (discount_id)
       REFERENCES Discount(discount_id)
-      ON DELETE CASCADE,
+      ON DELETE CASCADE
     -- FOREIGN KEY subscription_id
   );
 
 CREATE TABLE IF NOT EXISTS Customer_Subscription (
-	customer_id INT REFERENCES TO Customer ON UPDATE CASCADE ON DELETE CASCADE,
-	subscription_id INT REFERENCES TO Subscription ON UPDATE CASCADE ON DELETE CASCADE,
+	customer_id INT REFERENCES Customer ON UPDATE CASCADE ON DELETE CASCADE,
+	subscription_id INT REFERENCES Subscription ON UPDATE CASCADE ON DELETE CASCADE,
 	CONSTRAINT customer_subscription_pk
 		PRIMARY KEY (customer_id, subscription_id)
 );
