@@ -1,0 +1,77 @@
+9
+timetable
+1
+n
+timetable time
+6
+
+discount
+1
+n
+discount amount
+5
+
+hall
+1
+y
+1
+hall name
+timetable
+6
+
+trainer
+7
+n
+name name
+gender gender
+dob dob
+passport passport
+category_sport category
+tel tel
+addr addr
+5
+
+service
+3
+y
+1
+service_name name
+service_price price
+service_dur dur
+hall
+10
+
+service_trainer
+0
+y
+2
+service
+trainer
+15
+
+subscription
+2
+y
+1
+sub_name name
+sub_price price
+service
+15
+
+customer
+2
+y
+1
+name name
+tel tel
+discount
+20
+
+customer_subscription
+0
+y
+2
+customer
+subscription
+30
+

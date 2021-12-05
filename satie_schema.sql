@@ -36,6 +36,16 @@ CREATE TABLE IF NOT EXISTS Hall (
       ON DELETE CASCADE
   );
 
+-- Insert by your own hands!!!
+CREATE TABLE IF NOT EXISTS Category_Percent (
+	PRIMARY KEY (trainer_category),
+	trainer_category VARCHAR(70),
+	percent INT
+);
+INSERT INTO Category_Percent(trainer_category, percent) VALUES('тренер высшей квалификационной категории', '20');
+INSERT INTO Category_Percent(trainer_category, percent) VALUES('тренер первой квалификационной категории', '15');
+INSERT INTO Category_Percent(trainer_category, percent) VALUES('тренер второй квалификационной категории', '10');
+
 CREATE TABLE IF NOT EXISTS Trainer (
     PRIMARY KEY (trainer_id),
     trainer_id INT GENERATED ALWAYS AS IDENTITY,
@@ -45,14 +55,14 @@ CREATE TABLE IF NOT EXISTS Trainer (
     trainer_passport CHAR(11),
     trainer_category VARCHAR(70),
     trainer_tel VARCHAR(20),
-    trainer_addr VARCHAR(100)
+    trainer_addr VARCHAR(100),
+
+	FOREIGN KEY (trainer_category)
+		REFERENCES Category_Percent(trainer_category)
+		ON UPDATE CASCADE
+		ON DELETE CASCADE
   );
 
-CREATE TABLE IF NOT EXISTS Category_Percent (
-	PRIMARY KEY (trainer_category),
-	trainer_category VARCHAR(70),
-	percent INT
-);
 
 CREATE TABLE IF NOT EXISTS Service (
     PRIMARY KEY (service_id),
@@ -78,7 +88,7 @@ CREATE TABLE IF NOT EXISTS Subscription (
 	PRIMARY KEY (subscription_id),
 	subscription_id INT GENERATED ALWAYS AS IDENTITY,
 	subscription_price INT,
-	subscription_name VARCHAR(20),
+	subscription_name VARCHAR(35),
 	service_id INT,
 	
 	FOREIGN KEY (service_id)
