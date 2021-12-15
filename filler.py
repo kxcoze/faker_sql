@@ -253,21 +253,35 @@ class MyFaker(MainFaker):
         super().__init__()
 
     def price(self):
-        return self.f.random_int(min=100, max=10**4, step=100)
+        return self.f.random_int(min=100, max=10**4, step=500)
 
+    def amount(self):
+        # Similar to count
+        return self.f.random_int(min=1, max=20)
+
+    def remain(self):
+        return self.f.random_int(min=0, max=50)
+
+    def ws_name(self):
+        return # ws1, ws2, ws3 ... wsn.
+    
+    def product_name(self):
+        return # prod1, prod2, prod3 ... prodn.
+
+    def product_desc(self):
+        return # Lorem ipsum
+
+    def component_name(self):
+        return # comp1, comp2, comp3 ... compn.
+
+    def component_time(self):
+        return # Random amount of time to create a component
 
 def main():
-#    f = MyFaker()
-#    f = SatieFaker()
-    f = TanyaFaker()
+    f = MyFaker()
     print(f._get_methods().keys())
     for i in range(6):
-        #print(f'Дата въезда: {f.room_date_in()}, Дата бронирования: {f.reservation_date()}, Дата выезда: {f.room_date_out()}')
-        #print(f.sub_name(), f.sub_price())
-        print(f.category_classif())
-        #print(f.category_desc()) 
-        print(f.category_price())
-        print()
+        print(f.amount())
 
 
 if __name__ == '__main__':
