@@ -1,4 +1,4 @@
-#!/home/kxcoze/homework/db/faker/bin/python
+#!/data/data/com.termux/files/home/projects/faker_sql/faker/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

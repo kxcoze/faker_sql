@@ -251,9 +251,14 @@ class MyFaker(MainFaker):
     
     def __init__(self):
         super().__init__()
+        self.unique = {
+            'ws': 0,
+            'comp': 0,
+            'prod': 0,
+        }
 
     def price(self):
-        return self.f.random_int(min=100, max=10**4, step=500)
+        return self.f.random_int(min=100, max=10**4, step=100)
 
     def amount(self):
         # Similar to count
@@ -263,25 +268,32 @@ class MyFaker(MainFaker):
         return self.f.random_int(min=0, max=50)
 
     def ws_name(self):
-        return # ws1, ws2, ws3 ... wsn.
+        # ws1, ws2, ws3 ... wsn.
+        self.unique['ws'] += 1
+        return f"Цех{self.unique['ws']}" 
     
     def product_name(self):
-        return # prod1, prod2, prod3 ... prodn.
+        # prod1, prod2, prod3 ... prodn.
+        self.unique['prod'] += 1
+        return f"Изделие{self.unique['prod']}" 
 
     def product_desc(self):
-        return # Lorem ipsum
+        return Faker('la').text(100)
 
     def component_name(self):
-        return # comp1, comp2, comp3 ... compn.
+        # comp1, comp2, comp3 ... compn.
+        self.unique['comp'] += 1
+        return f"Деталь{self.unique['comp']}" 
 
     def component_time(self):
-        return # Random amount of time to create a component
+        # Random amount of time to create a component
+        return self.f.random_int(min=1, max=4)
 
 def main():
     f = MyFaker()
     print(f._get_methods().keys())
     for i in range(6):
-        print(f.amount())
+        print(f.price())
 
 
 if __name__ == '__main__':

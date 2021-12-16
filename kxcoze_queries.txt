@@ -1,0 +1,58 @@
+7
+customer
+5 0
+name name
+inn inn
+addr addr
+tel tel
+passport passport
+15
+
+workshop
+3 0
+ws_name name
+name dir_name
+addr addr
+5
+
+worker
+5 1
+name name
+inn inn
+tel tel
+passport passport
+addr addr
+workshop
+15
+
+orders
+3 1
+addr addr
+passport passport
+date date
+customer
+20
+
+product
+4 0
+product_name name
+price price
+product_desc desc
+remain rem
+30
+
+orders_product
+1 2
+amount amount
+orders
+product
+50
+
+component
+2 2
+component_name name
+component_time time
+workshop
+product
+100
+

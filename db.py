@@ -1,7 +1,7 @@
 import psycopg2 as ps
 
 
-conn = ps.connect('dbname=tanya user=kxcoze')
+conn = ps.connect('dbname=mydb user=kxcoze')
 
 cur = conn.cursor()
 

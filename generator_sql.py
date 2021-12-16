@@ -60,11 +60,11 @@ def generate_insert_query(faker):
  
 
 def main():
-    reload(filename='tanya_schema.sql')
-    with open('tanya_queries.sql', 'w') as file:
+    reload(filename='kxcoze_schema.sql')
+    with open('kxcoze_queries.sql', 'w') as file:
         for _ in range(int(input('How many tables to insert you want: '))):
             #execute(generate_insert_query())
-            for query in generate_insert_query(TanyaFaker):
+            for query in generate_insert_query(MyFaker):
                 file.write(query+'\n')
 
 
