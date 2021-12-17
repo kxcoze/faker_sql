@@ -1,0 +1,299 @@
+\i
+\?
+\d
+\d
+\dn
+us
+ls
+;
+\i clear
+\! clear
+\! ls
+\i mydatabase.sql 
+\i mydatabase.sql 
+\! clear
+\i mydatabase.sql 
+\i mydatabase.sql 
+\d
+\d workshop
+\i mydatabase.sql 
+\d
+arsars
+asr
+asr
+sar
+sar
+asr
+ar
+asr
+asr
+rs
+asr
+asr
+rs
+asr
+a
+asr
+asr
+s
+ext
+exit
+\q
+\i mydatabase.sql 
+\! clear
+\d
+\d
+\d booking_product
+select * from customer;
+\i ~/db/labs/mydatabase.sql 
+\i ~/db/labs/mydatabase.sql 
+\i ~/db/labs/mydatabase.sql 
+\i ~/db/labs/mydatabase.sql 
+\i ~/db/labs/mydatabase.sql 
+\i ~/db/labs/mydatabase.sql 
+\i ~/db/labs/mydatabase.sql 
+\i ~/db/labs/mydatabase.sql 
+\i ~/db/labs/mydatabase.sql 
+\i ~/db/labs/mydatabase.sql 
+\i ~/db/labs/mydatabase.sql 
+\i ~/db/labs/mydatabase.sql 
+\i ~/db/labs/mydatabase.sql 
+\i ~/db/labs/mydatabase.sql 
+\d booking
+select * from booking;
+\i ~/db/labs/mydatabase.sql 
+\i ~/db/labs/mydatabase.sql 
+select * from customer;
+select c_name from booking;
+select c_id from booking;
+select c_id from booking where p_id = 1;
+select c_id from booking where b_id = 1;
+select b_date from booking;
+\i ~/db/labs/mydatabase.sql 
+\i ~/db/labs/mydatabase.sql 
+\i ~/db/labs/mydatabase.sql 
+\d
+\d
+ls
+;
+!ls
+;
+\!ls
+\! ls
+\d
+INSERT INTO Customer VALUES('123', 'V);
+';
+);
+INSERT INTO Customer VALUES('123', 'V');
+\d
+\x
+ls
+;
+\! clear
+\i mydb.sql 
+\d
+\d
+\x
+select * from component;
+select product_id from component;
+select * from product;
+ls
+;
+\d
+select * from component;
+ls
+\
+;
+\! clear
+select * from Worker;
+\x
+select * from Worker;
+select worker_name from Worker as wk, Workshop as ws;
+select wk.worker_name, ws.name from Worker as wk, Workshop as ws WHERE ws.id = wk.workshop_id;
+select wk.worker_name, ws.name from Worker as wk, Workshop as ws WHERE ws.id = wk.workshop_id;
+\d workshop
+select wk.worker_name, ws.workshop_name from Worker as wk, Workshop as ws WHERE ws.id = wk.workshop_id;
+select wk.worker_name, ws.workshop_name from Worker as wk, Workshop as ws WHERE ws.workshop_id = wk.workshop_id;
+select wk.worker_name, ws.workshop_name from Worker as wk, Workshop as ws WHERE ws.workshop_id = wk.workshop_id;
+\d
+\?
+\?
+\?
+\s test.sql
+\?
+\r
+\s test.sql
+select wk.worker_name, ws.workshop_name from Worker as wk, Workshop as ws WHERE ws.workshop_id = wk.workshop_id;
+\s test2.sql
+\d
+select * from orders_product;
+select * from orders_product where orders_id = 2;
+select product_id, orders_product_amount from orders_product where orders_id = 2;
+select product_id, orders_product_amount from orders_product where orders_id = 2;
+\d
+select * from component;
+\d
+\d customer
+\d worker
+select w.worker_name, ws.workshop_name from Worker as w inner join workshop as ws on w.workshop_id = ws.workshop_id;
+select worker_name, workshop_name from Worker as w inner join workshop as ws on w.workshop_id = ws.workshop_id;
+select worker_name, worker_inn, worker_passport, worker_addr, workshop_name from Worker as w inner join workshop as ws on w.workshop_id = ws.workshop_id;
+select worker_name, worker_inn, worker_passport, worker_addr, workshop_name from Worker as w inner join workshop as ws on w.workshop_id = ws.workshop_id;
+select count(worker_id) from worker;
+select worker_name, worker_inn, worker_passport, worker_addr, workshop_name from Worker as w inner join workshop as ws on w.workshop_id = ws.workshop_id;
+select worker_name, worker_inn, worker_passport, worker_addr, workshop_name from Worker as w inner join workshop as ws on w.workshop_id = ws.workshop_id;
+\r
+select worker_name, worker_inn, worker_passport, worker_addr, workshop_name from Worker as w inner join workshop as ws on w.workshop_id = ws.workshop_id;
+\s queries.txt
+exiit
+;
+select * from product;
+select product_name from product;
+select product_name from product where product_id = 20;
+select product_name from product as p inner join orders_product as op on p.product_id = op.product_id;
+select product_name,  from product as p inner join component as op on p.product_id = component.product_id;
+select product_name, component_name from product as p inner join component as op on p.product_id = component.product_id;
+select product_name, component_name from product as p inner join component as c on p.product_id = c.product_id;
+select product_name, component_name from product as p inner join component as c on p.product_id = c.product_id order by product_name;
+select product_name, component_name from product as p lelft join component as c on p.product_id = c.product_id order by product_name;
+select product_name, component_name from product as p left join component as c on p.product_id = c.product_id order by product_name;
+select product_name, component_name from product as p join component as c on p.product_id = c.product_id order by product_name;
+select product_name, component_name from product as p where 1 = c.product_id order by product_name;
+select product_name, component_name from product as p, component as c where 1 = c.product_id order by product_name;
+select product_name, component_name from product as p, component as c where 1 = c.product_id order by product_name;
+select product_name, component_name from product as p, component as c where p.product_id = 1 order by product_name;
+select product_name, component_name from product as p, component as c where p.product_id == 1 order by product_name;
+select product_name, component_name from product as p, component as c where p.product_id = 1 order by product_name;
+select product_name, component_name from product as p, component as c where p.product_id = '1' order by product_name;
+select product_name, component_name from product as p, component as c where p.product_id = c.product_id order by product_name;
+select product_name, component_name from product as p, component as c where p.product_id = 3 order by product_name;
+select product_name, component_name from product as p, component as c where p.product_id = c.product_id order by product_name;
+select product_name, component_name from product as p, component as c where p.product_id = c.product_id order = 3 by product_name;
+select product_name, component_name from product as p, component as c where 3 = c.product_id order by product_name;
+select product_name, component_name from product as p, component as c where 3 = c.product_id order by product_name;
+\d component
+select product_name, component_name from product as p, component as c where 3 = c.product_id and 3 = p.product_id order by product_name;
+select component_name from component;
+select component_name from component where product_id = 3;
+select component_name from component where product_id = 2;
+select component_name from component where product_id = 1;
+select component_name from component, product where product_id = 1;
+select component_name from component as c, product as p where product_id = 1;
+select component_name from component as c, product as p where p.product_id = 1;
+select product_name, component_name from component as c, product as p where p.product_id = 1;
+select product_name, component_name from component as c, product as p where c.product_id = 1;
+select product_name, component_name from component as c, product as p where c.product_id = 1 and p.product_id = 1;
+select product_name, component_name from component as c, product as p where c.product_id = 1 and p.product_id = 1;
+create function get_comps(int) returns setof record as  
+'select product_name, component_name, component_amount from component as c, product as p where c.product_id = $1 and p.product_id = $1';
+create function get_comps(int) returns setof record as  
+'select product_name, component_name, component_amount from component as c, product as p where c.product_id = $1 and p.product_id = $1' language sql;
+create function get_comps(int) returns setof record as  
+'select product_name, component_name, component_amount from component as c, product as p where c.product_id = $1 and p.product_id = $1' language sql;
+\d component
+create function get_comps(int) returns setof record as  
+'select product_name, component_name from component as c, product as p where c.product_id = $1 and p.product_id = $1' language sql;
+select get_comps(3);
+select get_comps(3) as result;
+select get_comps(4) as result;
+select get_comps(5) as result;
+select get_comps(6) as result;
+\r 
+\r
+create function get_comps(int) returns setof record as  
+'select product_name, component_name from component as c, product as p where c.product_id = $1 and p.product_id = $1' language sql;
+\w queries.txt 
+select product_name, component_name from product as p inner join component as c on p.product_id = c.product_id order by product_name;
+create function get_comps(int) returns setof record as  
+'select product_name, component_name from component as c, product as p where c.product_id = $1 and p.product_id = $1' language sql;
+\r
+select worker_name, worker_inn, worker_passport, worker_addr, workshop_name from Worker as w inner join workshop as ws on w.workshop_id = ws.workshop_id;
+\r
+\r
+select worker_name, worker_inn, worker_passport, worker_addr, workshop_name from Worker as w inner join workshop as ws on w.workshop_id = ws.workshop_id;
+\w queries.txt 
+\r
+create function get_comps(int) returns setof record as  
+'select product_name, component_name from component as c, product as p where c.product_id = $1 and p.product_id = $1' language sql;
+\s queries.txt 
+\?
+\p
+select worker_name, worker_inn, worker_passport, worker_addr, workshop_name from Worker as w inner join workshop as ws on w.workshop_id = ws.workshop_id;
+\p
+\a 
+\a
+\w queries.txt 
+\p
+create function get_comps(int) returns setof record as  
+'select product_name, component_name from component as c, product as p where c.product_id = $1 and p.product_id = $1' language sql;
+\p
+\e
+create function get_comps(int) returns setof record as  
+'select product_name, component_name from component as c, product as p where c.product_id = $1 and p.product_id = $1' language sql;
+\?
+\r
+\d component
+\d product
+select count(product_id) from product where product_rem > 0;
+select count(product_id) from product;
+select count(product_id) from product where product_rem > 2;
+select count(product_id) from product where product_rem > 3;
+select count(product_id) from product where product_rem > 5;
+select count(product_id) from product where product_rem > 10;
+select count(product_id) from product where product_rem > 60;
+select count(product_id) from product where product_rem > 30;
+\r 
+\p
+\p
+select count(product_id) from product where product_rem > 30;
+create function get_comps(int) returns setof record as  
+'select product_name, component_name from component as c, product as p where c.product_id = $1 and p.product_id = $1' language sql;
+\p
+\e
+create function get_comps(int) returns setof record as  
+'select product_name, component_name from component as c, product as p where c.product_id = $1 and p.product_id = $1' language sql;
+\! clear
+\d
+\d customer
+\d
+select customer_name, orders_id from customer as c left join orders as o on c.customer_id = o.customer_id;
+select customer_name, orders_id from customer as c right join orders as o on c.customer_id = o.customer_id;
+\d orders
+select customer_id from orders;
+select * from orders;
+select orders_id from orders where customer_id = 3;
+select orders_id from orders where customer_id = 4;
+select orders_id from orders where customer_id = 5;
+select orders_id from orders where customer_id = 10;
+select orders_id from orders where customer_id = 4;
+select orders_id from orders where customer_id = 20;
+select orders_id from orders where customer_id = 15;
+select customer_id from orders where count(orders_id) > 0;
+select count(orders_id) from orders;
+select count(orders_id) from orders as o, customer as c where c.customer_id = o.customer_id;
+select orders_id from orders as o, customer as c where c.customer_id = o.customer_id;
+select customer_name, orders_id from orders as o, customer as c where c.customer_id = o.customer_id;
+select orders_id from orders where customer_id = 15;
+select customer_name, orders_id from orders as o, customer as c where c.customer_id = o.customer_id order by customer_name;
+select customer_id from orders;
+select customer_id from orders where count(orders_id) > 2;
+select customer_id from orders having count(orders_id) > 2;
+select orders.customer_id from orders having count(orders_id) > 2;
+select count(*) from orders having count(orders_id) > 2;
+select count(*) from orders having count(orders_id) > 3;
+select count(customer_id) from orders having count(orders_id) > 3;
+select count(customer_id) from orders having count(orders_id) > 5;
+select count(orders_id) from orders having count(orders_id) > 5;
+select count(orders_id) from orders having count(orders_id) > 10;
+select customer_id from orders having count(orders_id) > 10;
+select customer_id from orders group by customer_id having count(orders_id) > 10;
+select customer_id from orders group by customer_id having count(orders_id) > 5;
+select customer_id from orders group by customer_id having count(orders_id) > 3;
+select customer_id from orders group by customer_id having count(orders_id) > 2;
+select customer_id from orders group by customer_id having count(orders_id) > 1;
+select customer_id from orders group by customer_id having count(orders_id) > 0;
+select customer_id from orders group by customer_id having count(orders_id) > 1;
+select customer_id from orders group by customer_id having count(orders_id) > 2;
+select customer_id from orders group by customer_id having count(orders_id) >= 2;
+select customer_id from orders group by customer_id having count(orders_id) > 2;
+\s queries.txt 
