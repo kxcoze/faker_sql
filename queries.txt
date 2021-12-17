@@ -297,3 +297,12 @@ select customer_id from orders group by customer_id having count(orders_id) > 2;
 select customer_id from orders group by customer_id having count(orders_id) >= 2;
 select customer_id from orders group by customer_id having count(orders_id) > 2;
 \s queries.txt 
+select customer_id from orders group by customer_id having count(orders_id) >1;
+select customer_id from orders group by customer_id having count(orders_id) >1;
+select customer_name from customer c inner join orders o on c.customer_id = o.customer_id group by customer_name having count(orders_id) > 1;
+select customer_name, count(orders_id) from customer c inner join orders o on c.customer_id = o.customer_id group by customer_name having count(orders_id) > 1;
+select customer_name, count(orders_id) from customer c inner join orders o on c.customer_id = o.customer_id group by customer_name having count(orders_id) > 0;
+select customer_name, count(orders_id) from customer c inner join orders o on c.customer_id = o.customer_id group by customer_name having count(orders_id) > 0 order by customer_name;
+select customer_name, count(orders_id) from customer c inner join orders o on c.customer_id = o.customer_id group by customer_name having count(orders_id) > 0 order by count(orders_id) asc;
+select customer_name, count(orders_id) from customer c inner join orders o on c.customer_id = o.customer_id group by customer_name having count(orders_id) > 0 order by count(orders_id) desc;
+\s queries.txt 
