@@ -71,13 +71,13 @@ CREATE TABLE IF NOT EXISTS Product (
 		product_name		VARCHAR(120) NOT NULL,
 		product_price 		NUMERIC NOT NULL,
 		product_desc		VARCHAR(255),
-		product_rem			INT
+		product_quantity	INT
 );
 
 CREATE TABLE IF NOT EXISTS Orders_Product (
-		orders_id 			INT REFERENCES Orders ON UPDATE CASCADE ON DELETE CASCADE,
-		product_id 			INT REFERENCES Product ON DELETE CASCADE,
-		orders_product_amount 		INT,
+		orders_id 				INT REFERENCES Orders ON UPDATE CASCADE ON DELETE CASCADE,
+		product_id 				INT REFERENCES Product ON DELETE CASCADE,
+		orders_product_quantity	INT,
 		CONSTRAINT orders_product_pk 
 			PRIMARY KEY (orders_id, product_id)
 );
@@ -87,6 +87,7 @@ CREATE TABLE IF NOT EXISTS Component (
 		component_id 		INT GENERATED ALWAYS AS IDENTITY,
 		component_name		VARCHAR(120) NOT NULL,
 		component_time 		INT,
+		component_quantity  INT,
 		workshop_id			INT REFERENCES Workshop ON DELETE CASCAdE,
 		product_id			INT REFERENCES Product ON DELETE CASCADE
 );

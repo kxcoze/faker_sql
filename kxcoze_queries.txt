@@ -6,7 +6,7 @@ inn inn
 addr addr
 tel tel
 passport passport
-15
+20
 
 workshop
 3 0
@@ -23,7 +23,7 @@ tel tel
 passport passport
 addr addr
 workshop
-15
+30
 
 orders
 3 1
@@ -31,28 +31,29 @@ addr addr
 passport passport
 date date
 customer
-20
+50
 
 product
 4 0
 product_name name
 price price
 product_desc desc
-remain rem
-30
+remain quantity
+50
 
 orders_product
 1 2
-amount amount
+amount quantity
 orders
 product
-50
+200
 
 component
-2 2
+3 2
 component_name name
 component_time time
+remain quantity
 workshop
 product
-100
+300
 
