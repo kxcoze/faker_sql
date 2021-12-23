@@ -289,8 +289,36 @@ class MyFaker(MainFaker):
         # Random amount of time to create a component
         return self.f.random_int(min=1, max=4)
 
+class MarinaFaker(MainFaker):
+    
+    def __init__(self):
+        super().__init__()
+        self.unique = {
+            'type': set()
+        }
+        self.type = ''
+        self.count_places = ''
+        self._type = {
+            'малой': (80, 96),
+            'средней': (152, 156),
+            'большой': (138, 198),
+        }
+
+    def type_plane(self):
+        self.type = self.f.random_element(self._type.keys())
+        self.count_places = self.f.random_int(min=1, max=2)
+        while (self.type, self.count_places) in self.unique['type'] and len(self.unique['type']) != len(self._type)*2:
+            self.type = self.f.random_element(self._type.keys())
+            self.count_places = self.f.random_int(min=1, max=2)
+        self.unique['type'].add((self.type, self.count_places))
+        return self.category
+
+    def cnt_plane(self):
+        pass
+
+
 def main():
-    f = MyFaker()
+    f = MarinaFaker()
     print(f._get_methods().keys())
     for i in range(6):
         print(f.price())
