@@ -1,7 +1,7 @@
 from random import choice
 from pprint import pprint
 
-from filler import MyFaker, SatieFaker, TanyaFaker
+from filler import MyFaker, SatieFaker, TanyaFaker, MarinaFaker
 from db import execute, fetch_many, reload
 
 
@@ -30,7 +30,9 @@ def generate_insert_query(faker):
     special_ind = None
     for i in range(count_fk_column):
         foreign_table = input("Input name of table that your column are references to: ")
-        if foreign_table == 'hall' or foreign_table == 'room': 
+        if foreign_table == 'hall' or foreign_table == 'room' or foreign_table == 'trip_time': 
+            if foreign_table == 'trip_time':
+                foreign_table = 'trip'
             special_foreign_table = foreign_table
             special_ind = i
         foreign_columns.append(f"{foreign_table}_id")
@@ -49,22 +51,25 @@ def generate_insert_query(faker):
                     fk_values.append(str(f.hall_id))
                 elif special_foreign_table == 'room':
                     fk_values.append(str(f.room_id))
+                elif special_foreign_table == 'trip':
+                    fk_values.append(str(f.trip_id))
             else:
                 fk_values.append(choice(x))
         
 
         query = f"INSERT INTO {table_name.capitalize()} ({', '.join(native_columns+foreign_columns)}) VALUES({', '.join(values+fk_values)})"
+        print(query)
         if execute(query):
             queries.append(query)
     return queries
  
 
 def main():
-    reload(filename='kxcoze_schema.sql')
-    with open('kxcoze_queries.sql', 'w') as file:
+    reload(filename='marina_schema.sql')
+    with open('marina_queries.sql', 'w') as file:
         for _ in range(int(input('How many tables to insert you want: '))):
             #execute(generate_insert_query())
-            for query in generate_insert_query(MyFaker):
+            for query in generate_insert_query(MarinaFaker):
                 file.write(query+'\n')
 
 

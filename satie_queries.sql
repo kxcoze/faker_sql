@@ -1,106 +1,106 @@
-INSERT INTO Timetable (timetable_time) VALUES('Ежедневно, 9:00-22:00')
-INSERT INTO Timetable (timetable_time) VALUES('Ежедневно, 8:00-22:00')
-INSERT INTO Timetable (timetable_time) VALUES('Ежедневно, 9:00-21:00')
-INSERT INTO Timetable (timetable_time) VALUES('Пн-Пт, 6:00-21:00, Сб-Вс, 8:00-23:00')
-INSERT INTO Timetable (timetable_time) VALUES('Ежедневно, 7:00-23:00')
-INSERT INTO Timetable (timetable_time) VALUES('Пн-Пт, 7:00-21:00, Сб-Вс, 8:00-22:00')
-INSERT INTO Discount (discount_amount) VALUES('25')
-INSERT INTO Discount (discount_amount) VALUES('20')
-INSERT INTO Discount (discount_amount) VALUES('15')
-INSERT INTO Discount (discount_amount) VALUES('10')
-INSERT INTO Hall (hall_name, timetable_id) VALUES('Тренажерный зал', '6')
-INSERT INTO Hall (hall_name, timetable_id) VALUES('Спортзал', '1')
-INSERT INTO Hall (hall_name, timetable_id) VALUES('Групповой зал', '3')
-INSERT INTO Hall (hall_name, timetable_id) VALUES('Бассейн', '3')
-INSERT INTO Hall (hall_name, timetable_id) VALUES('Фитнес зал', '1')
-INSERT INTO Hall (hall_name, timetable_id) VALUES('Детская комната', '6')
-INSERT INTO Trainer (trainer_name, trainer_gender, trainer_dob, trainer_passport, trainer_category, trainer_tel, trainer_addr) VALUES('Соколова Евпраксия Ждановна', 'Ж', '1945-08-05', '8306 421094', 'тренер высшей квалификационной категории', '8 (284) 916-2492', 'к. Аргаяш, пр. Ленинградский, д. 7/7 к. 388, 909058')
-INSERT INTO Trainer (trainer_name, trainer_gender, trainer_dob, trainer_passport, trainer_category, trainer_tel, trainer_addr) VALUES('Лукин Бронислав Феофанович', 'М', '2020-10-31', '4319 749839', 'тренер первой квалификационной категории', '+77845125236', 'г. Малоярославец, пр. Космический, д. 384 стр. 5, 307058')
-INSERT INTO Trainer (trainer_name, trainer_gender, trainer_dob, trainer_passport, trainer_category, trainer_tel, trainer_addr) VALUES('Михей Юлианович Буров', 'М', '1961-03-21', '1203 207148', 'тренер первой квалификационной категории', '8 (048) 309-4258', 'д. Новокузнецк, наб. Пирогова, д. 8, 842274')
-INSERT INTO Trainer (trainer_name, trainer_gender, trainer_dob, trainer_passport, trainer_category, trainer_tel, trainer_addr) VALUES('Тимофеев Мартьян Всеволодович', 'М', '1910-03-26', '4316 825012', 'тренер второй квалификационной категории', '+7 336 995 76 46', 'д. Рязань, ш. Береговое, д. 79, 011871')
-INSERT INTO Trainer (trainer_name, trainer_gender, trainer_dob, trainer_passport, trainer_category, trainer_tel, trainer_addr) VALUES('Радован Адамович Калашников', 'М', '1972-02-04', '0213 933219', 'тренер второй квалификационной категории', '+7 147 947 7982', 'к. Бирск, алл. Черемушки, д. 74, 134197')
-INSERT INTO Service (service_name, service_price, service_dur, hall_id) VALUES('Бассейн', '300', '90', 4)
-INSERT INTO Service (service_name, service_price, service_dur, hall_id) VALUES('Детская комната', '500', '60', 6)
-INSERT INTO Service (service_name, service_price, service_dur, hall_id) VALUES('Бассейн', '600', '60', 4)
-INSERT INTO Service (service_name, service_price, service_dur, hall_id) VALUES('Групповые программы', '600', '90', 3)
-INSERT INTO Service (service_name, service_price, service_dur, hall_id) VALUES('Тренажерный зал', '600', '90', 1)
-INSERT INTO Service (service_name, service_price, service_dur, hall_id) VALUES('Групповые программы', '400', '60', 3)
-INSERT INTO Service (service_name, service_price, service_dur, hall_id) VALUES('Бассейн', '500', '60', 4)
-INSERT INTO Service (service_name, service_price, service_dur, hall_id) VALUES('Тренажерный зал', '500', '90', 1)
-INSERT INTO Service (service_name, service_price, service_dur, hall_id) VALUES('Игривые виды спорта', '700', '60', 3)
-INSERT INTO Service (service_name, service_price, service_dur, hall_id) VALUES('Айкидо', '800', '60', 2)
-INSERT INTO Service_trainer (service_id, trainer_id) VALUES('2', '4')
-INSERT INTO Service_trainer (service_id, trainer_id) VALUES('6', '3')
-INSERT INTO Service_trainer (service_id, trainer_id) VALUES('10', '5')
-INSERT INTO Service_trainer (service_id, trainer_id) VALUES('5', '1')
-INSERT INTO Service_trainer (service_id, trainer_id) VALUES('5', '5')
-INSERT INTO Service_trainer (service_id, trainer_id) VALUES('6', '1')
-INSERT INTO Service_trainer (service_id, trainer_id) VALUES('1', '2')
-INSERT INTO Service_trainer (service_id, trainer_id) VALUES('9', '3')
-INSERT INTO Service_trainer (service_id, trainer_id) VALUES('10', '3')
-INSERT INTO Service_trainer (service_id, trainer_id) VALUES('10', '2')
-INSERT INTO Service_trainer (service_id, trainer_id) VALUES('7', '5')
-INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Полугодовой (безлимит)', '9000', '6')
-INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Месячный (8 занятий)', '3500', '5')
-INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Разовый (по выбору)', '800', '7')
-INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Месячный (безлимит)', '5000', '1')
-INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Годовой (безлимит)', '15000', '2')
-INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Месячный (4 занятия)', '2000', '7')
-INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Полугодовой (безлимит)', '9000', '9')
-INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Разовый (по выбору)', '800', '4')
-INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Полугодовой (безлимит)', '9000', '10')
-INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Разовый (по выбору)', '800', '8')
-INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Годовой (безлимит)', '15000', '10')
-INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Месячный (8 занятий)', '3500', '3')
-INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Месячный (8 занятий)', '3500', '1')
-INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Разовый (по выбору)', '800', '1')
-INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Годовой (безлимит)', '15000', '3')
-INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Котов Всеслав Борисович', '+7 453 409 42 54', '1')
-INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Светозар Эдгарович Пестов', '+7 (821) 529-19-88', '2')
-INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Мария Руслановна Новикова', '8 (308) 076-90-52', '2')
-INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Горбунова Нонна Рубеновна', '+74020500241', '2')
-INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Зыков Прокофий Давидович', '8 (276) 649-80-58', '4')
-INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Ким Филиппович Ковалев', '+7 (077) 266-8259', '3')
-INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Акулина Леонидовна Беляева', '8 (778) 873-27-62', '3')
-INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Евфросиния Тимофеевна Воронова', '+78722040676', '4')
-INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Королева Юлия Богдановна', '+75259149166', '2')
-INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Белова Анастасия Ивановна', '8 567 156 97 52', '4')
-INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Наумов Пантелеймон Евстигнеевич', '8 (948) 290-96-22', '1')
-INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Щукин Юлий Дмитриевич', '+7 (769) 300-56-36', '1')
-INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Меркушева Олимпиада Эльдаровна', '+7 705 998 0456', '3')
-INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Большакова Нонна Александровна', '8 (434) 304-4008', '1')
-INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Ершова Мария Павловна', '+7 531 351 0141', '1')
-INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Анастасия Степановна Александрова', '8 838 787 1649', '2')
-INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Бурова Вероника Болеславовна', '8 846 441 6672', '1')
-INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Лебедева Ираида Романовна', '8 (754) 820-55-10', '1')
-INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Василиса Алексеевна Комарова', '8 (999) 423-5595', '5')
-INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Мария Вадимовна Бобылева', '8 164 362 37 65', '2')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('7', '4')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('11', '9')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('9', '12')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('6', '6')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('16', '5')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('3', '4')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('6', '8')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('20', '12')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('9', '1')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('17', '3')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('15', '4')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('9', '13')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('6', '2')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('13', '5')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('16', '13')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('4', '4')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('17', '13')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('9', '5')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('3', '12')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('10', '11')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('12', '6')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('19', '10')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('14', '10')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('12', '14')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('8', '10')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('5', '13')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('11', '7')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('14', '6')
-INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('17', '6')
+INSERT INTO Timetable (timetable_time) VALUES('Ежедневно, 9:00-22:00');
+INSERT INTO Timetable (timetable_time) VALUES('Ежедневно, 8:00-22:00');
+INSERT INTO Timetable (timetable_time) VALUES('Ежедневно, 9:00-21:00');
+INSERT INTO Timetable (timetable_time) VALUES('Пн-Пт, 6:00-21:00, Сб-Вс, 8:00-23:00');
+INSERT INTO Timetable (timetable_time) VALUES('Ежедневно, 7:00-23:00');
+INSERT INTO Timetable (timetable_time) VALUES('Пн-Пт, 7:00-21:00, Сб-Вс, 8:00-22:00');
+INSERT INTO Discount (discount_amount) VALUES('25');
+INSERT INTO Discount (discount_amount) VALUES('20');
+INSERT INTO Discount (discount_amount) VALUES('15');
+INSERT INTO Discount (discount_amount) VALUES('10');
+INSERT INTO Hall (hall_name, timetable_id) VALUES('Тренажерный зал', '6');
+INSERT INTO Hall (hall_name, timetable_id) VALUES('Спортзал', '1');
+INSERT INTO Hall (hall_name, timetable_id) VALUES('Групповой зал', '3');
+INSERT INTO Hall (hall_name, timetable_id) VALUES('Бассейн', '3');
+INSERT INTO Hall (hall_name, timetable_id) VALUES('Фитнес зал', '1');
+INSERT INTO Hall (hall_name, timetable_id) VALUES('Детская комната', '6');
+INSERT INTO Trainer (trainer_name, trainer_gender, trainer_dob, trainer_passport, trainer_category, trainer_tel, trainer_addr) VALUES('Соколова Евпраксия Ждановна', 'Ж', '1945-08-05', '8306 421094', 'тренер высшей квалификационной категории', '8 (284) 916-2492', 'к. Аргаяш, пр. Ленинградский, д. 7/7 к. 388, 909058');
+INSERT INTO Trainer (trainer_name, trainer_gender, trainer_dob, trainer_passport, trainer_category, trainer_tel, trainer_addr) VALUES('Лукин Бронислав Феофанович', 'М', '2020-10-31', '4319 749839', 'тренер первой квалификационной категории', '+77845125236', 'г. Малоярославец, пр. Космический, д. 384 стр. 5, 307058');
+INSERT INTO Trainer (trainer_name, trainer_gender, trainer_dob, trainer_passport, trainer_category, trainer_tel, trainer_addr) VALUES('Михей Юлианович Буров', 'М', '1961-03-21', '1203 207148', 'тренер первой квалификационной категории', '8 (048) 309-4258', 'д. Новокузнецк, наб. Пирогова, д. 8, 842274');
+INSERT INTO Trainer (trainer_name, trainer_gender, trainer_dob, trainer_passport, trainer_category, trainer_tel, trainer_addr) VALUES('Тимофеев Мартьян Всеволодович', 'М', '1910-03-26', '4316 825012', 'тренер второй квалификационной категории', '+7 336 995 76 46', 'д. Рязань, ш. Береговое, д. 79, 011871');
+INSERT INTO Trainer (trainer_name, trainer_gender, trainer_dob, trainer_passport, trainer_category, trainer_tel, trainer_addr) VALUES('Радован Адамович Калашников', 'М', '1972-02-04', '0213 933219', 'тренер второй квалификационной категории', '+7 147 947 7982', 'к. Бирск, алл. Черемушки, д. 74, 134197');
+INSERT INTO Service (service_name, service_price, service_dur, hall_id) VALUES('Бассейн', '300', '90', 4);
+INSERT INTO Service (service_name, service_price, service_dur, hall_id) VALUES('Детская комната', '500', '60', 6);
+INSERT INTO Service (service_name, service_price, service_dur, hall_id) VALUES('Бассейн', '600', '60', 4);
+INSERT INTO Service (service_name, service_price, service_dur, hall_id) VALUES('Групповые программы', '600', '90', 3);
+INSERT INTO Service (service_name, service_price, service_dur, hall_id) VALUES('Тренажерный зал', '600', '90', 1);
+INSERT INTO Service (service_name, service_price, service_dur, hall_id) VALUES('Групповые программы', '400', '60', 3);
+INSERT INTO Service (service_name, service_price, service_dur, hall_id) VALUES('Бассейн', '500', '60', 4);
+INSERT INTO Service (service_name, service_price, service_dur, hall_id) VALUES('Тренажерный зал', '500', '90', 1);
+INSERT INTO Service (service_name, service_price, service_dur, hall_id) VALUES('Игривые виды спорта', '700', '60', 3);
+INSERT INTO Service (service_name, service_price, service_dur, hall_id) VALUES('Айкидо', '800', '60', 2);
+INSERT INTO Service_trainer (service_id, trainer_id) VALUES('2', '4');
+INSERT INTO Service_trainer (service_id, trainer_id) VALUES('6', '3');
+INSERT INTO Service_trainer (service_id, trainer_id) VALUES('10', '5');
+INSERT INTO Service_trainer (service_id, trainer_id) VALUES('5', '1');
+INSERT INTO Service_trainer (service_id, trainer_id) VALUES('5', '5');
+INSERT INTO Service_trainer (service_id, trainer_id) VALUES('6', '1');
+INSERT INTO Service_trainer (service_id, trainer_id) VALUES('1', '2');
+INSERT INTO Service_trainer (service_id, trainer_id) VALUES('9', '3');
+INSERT INTO Service_trainer (service_id, trainer_id) VALUES('10', '3');
+INSERT INTO Service_trainer (service_id, trainer_id) VALUES('10', '2');
+INSERT INTO Service_trainer (service_id, trainer_id) VALUES('7', '5');
+INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Полугодовой (безлимит)', '9000', '6');
+INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Месячный (8 занятий)', '3500', '5');
+INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Разовый (по выбору)', '800', '7');
+INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Месячный (безлимит)', '5000', '1');
+INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Годовой (безлимит)', '15000', '2');
+INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Месячный (4 занятия)', '2000', '7');
+INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Полугодовой (безлимит)', '9000', '9');
+INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Разовый (по выбору)', '800', '4');
+INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Полугодовой (безлимит)', '9000', '10');
+INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Разовый (по выбору)', '800', '8');
+INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Годовой (безлимит)', '15000', '10');
+INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Месячный (8 занятий)', '3500', '3');
+INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Месячный (8 занятий)', '3500', '1');
+INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Разовый (по выбору)', '800', '1');
+INSERT INTO Subscription (subscription_name, subscription_price, service_id) VALUES('Годовой (безлимит)', '15000', '3');
+INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Котов Всеслав Борисович', '+7 453 409 42 54', '1');
+INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Светозар Эдгарович Пестов', '+7 (821) 529-19-88', '2');
+INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Мария Руслановна Новикова', '8 (308) 076-90-52', '2');
+INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Горбунова Нонна Рубеновна', '+74020500241', '2');
+INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Зыков Прокофий Давидович', '8 (276) 649-80-58', '4');
+INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Ким Филиппович Ковалев', '+7 (077) 266-8259', '3');
+INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Акулина Леонидовна Беляева', '8 (778) 873-27-62', '3');
+INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Евфросиния Тимофеевна Воронова', '+78722040676', '4');
+INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Королева Юлия Богдановна', '+75259149166', '2');
+INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Белова Анастасия Ивановна', '8 567 156 97 52', '4');
+INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Наумов Пантелеймон Евстигнеевич', '8 (948) 290-96-22', '1');
+INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Щукин Юлий Дмитриевич', '+7 (769) 300-56-36', '1');
+INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Меркушева Олимпиада Эльдаровна', '+7 705 998 0456', '3');
+INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Большакова Нонна Александровна', '8 (434) 304-4008', '1');
+INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Ершова Мария Павловна', '+7 531 351 0141', '1');
+INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Анастасия Степановна Александрова', '8 838 787 1649', '2');
+INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Бурова Вероника Болеславовна', '8 846 441 6672', '1');
+INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Лебедева Ираида Романовна', '8 (754) 820-55-10', '1');
+INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Василиса Алексеевна Комарова', '8 (999) 423-5595', '5');
+INSERT INTO Customer (customer_name, customer_tel, discount_id) VALUES('Мария Вадимовна Бобылева', '8 164 362 37 65', '2');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('7', '4');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('11', '9');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('9', '12');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('6', '6');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('16', '5');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('3', '4');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('6', '8');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('20', '12');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('9', '1');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('17', '3');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('15', '4');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('9', '13');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('6', '2');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('13', '5');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('16', '13');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('4', '4');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('17', '13');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('9', '5');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('3', '12');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('10', '11');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('12', '6');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('19', '10');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('14', '10');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('12', '14');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('8', '10');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('5', '13');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('11', '7');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('14', '6');
+INSERT INTO Customer_subscription (customer_id, subscription_id) VALUES('17', '6');

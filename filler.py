@@ -296,32 +296,125 @@ class MarinaFaker(MainFaker):
         self.unique = {
             'type': set()
         }
+        self.arrive = ''
+        self.departure = ''
         self.type = ''
         self.count_places = ''
+        self.length = ''
         self._type = {
             'малой': (80, 96),
             'средней': (152, 156),
             'большой': (138, 198),
         }
 
-    def type_plane(self):
+        self._rate = {
+            'эконом': (4, 15),
+            'комфорт': (16, 30),
+            'бизнес': (50, 80),
+        }
+
+        self._class_type = ('международный', 'региональный', 'местный')
+        self._class_classif = ('эконом', 'бизнес', 'первый')
+
+    def plane_type(self):
         self.type = self.f.random_element(self._type.keys())
-        self.count_places = self.f.random_int(min=1, max=2)
+        a, b = self._type[self.type]
+        self.count_places = self.f.random_int(min=b, max=b)
         while (self.type, self.count_places) in self.unique['type'] and len(self.unique['type']) != len(self._type)*2:
             self.type = self.f.random_element(self._type.keys())
-            self.count_places = self.f.random_int(min=1, max=2)
+            a, b = self._type[self.type]
+            self.count_places = self.f.random_int(min=a, max=b)
         self.unique['type'].add((self.type, self.count_places))
-        return self.category
+        return self.type
 
-    def cnt_plane(self):
+    def plane_places(self):
+        return self.count_places
+    
+    def list_departure(self):
+        self.departure = self.f.city()
+        return self.departure
+
+    def list_arrive(self):
+        self.arrive = self.f.city()
+        while self.arrive == self.departure:
+            self.arrive = self.f.city()
+        return self.arrive
+
+    def list_length(self):
+        self.length = self.f.random_int(min=200, max=8000, step=500)
+        return self.length
+    
+    def list_fuel(self):
+        return self.length * 15 // 100
+
+    def trip_code(self):
+        C1 = self.f.random_uppercase_letter()
+        C2 = self.f.random_uppercase_letter()
+        D1 = self.f.random_digit()
+        D2 = self.f.random_digit()
+        D3 = self.f.random_digit()
+        D4 = self.f.random_digit()
+        return f'{C1}{C2}{D1}{D2}{D3}{D4}'
+
+#    def trip_time(self):
+#        self.date = self.f.date_between('-3M', '+6M')
+#        self.date1 = datetime(self.date.year, self.date.month, self.date.day) + timedelta(hours=self.f.random_int(min=1, max=23), minutes=self.f.random_int(min=0, max=60, step=10)) 
+#        date2 = self.date1 + timedelta(hours=self.f.random_int(min=3, max=36), minutes=self.f.random_int(min=0, max=60, step=10))
+#        return self.date1.strftime('%H.%M - %d/%m/%Y'), date2.strftime('%H.%M - %d/%m/%Y')
+    def trip_time(self):
+        return timedelta(hours=self.f.random_int(min=1, max=36), minutes=self.f.random_int(min=0, max=60, step=10))
+
+    def price_rate(self): 
+        self.rate = self.f.random_element(elements=self._rate.keys())
+        return self.rate
+
+    def price_price(self): 
+        a, b = self._rate[self.rate]
+        return self.f.random_int(min=a*1000, max=b*1000, step=500)
+
+    def passenger_place(self):
+        #self.room_id = self.f.random_element(fetch_many('room'))[0]
+        #date_in = fetch_by_id('room', self.room_id, attr='date_in')[0]
+        # Need fetch plane places from db
+        return self.f.random_uppercase_letter() + str(self.f.random_int(min=1, max=150))
+        
+    def class_type(self): 
+        type_ = self.f.random_element(elements=self._class_type)
+        return f'для {type_} протяженности'
+    
+    def class_classif(self): 
+        return self.f.random_element(elements=self._class_classif)
+
+    def class_summary(self): 
+        # loremipsum 
         pass
 
+    def flight_departure(self):
+        self.date = self.f.date_between('-3M', '+6M')
+        self.date1 = datetime(self.date.year, self.date.month, self.date.day) + timedelta(hours=self.f.random_int(min=1, max=23),minutes=self.f.random_int(min=0, max=50, step=10))
+        return self.date1.strftime('%H.%M - %d/%m/%Y')
 
+    def flight_arrive(self):
+        self.trip_id = self.f.random_element(fetch_many('trip'))[0]
+        hours = fetch_by_id('trip', self.trip_id, attr='time')[0]
+        res = hours.split()
+        if res[0].isdigit():
+            day=res[0]
+        else:
+            day=0
+        hour, minute, _ = res[-1].split(':')
+        delta = timedelta(days=int(day), hours=int(hour), minutes=int(minute))
+        self.date2 = self.date1 + delta
+        return self.date2.strftime('%H.%M - %d/%m/%Y')
+    
 def main():
     f = MarinaFaker()
     print(f._get_methods().keys())
-    for i in range(6):
-        print(f.price())
+    for i in range(20):
+        #print(f.type_plane(), f.cnt_plane())
+        #print(f.list_departure(), f.list_arrive(), f.list_length(), f.list_fuel())
+        #print(f.trip_code())
+        print(f.flight_departure(), f.flight_arrive())
 
 
 if __name__ == '__main__':
