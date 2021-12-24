@@ -42,7 +42,7 @@ access_plane
 0 2
 crew
 class
-20
+10
 
 plane
 2 1

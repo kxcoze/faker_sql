@@ -1,228 +1,235 @@
-INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('ст. Оха', 'ст. Дмитров', '7200', '1080');
-INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('ст. Звенигород', 'клх Плес', '6200', '930');
-INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('к. Щелково', 'к. Алексин', '5200', '780');
-INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('с. Новороссийка', 'клх Юровск', '200', '30');
-INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('д. Калевала', 'ст. Северо-Курильск', '6200', '930');
-INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('с. Оренбург', 'г. Соболево', '5200', '780');
-INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('клх Шаховская', 'к. Кострома', '1700', '255');
-INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('п. Поярково', 'г. Орел', '5700', '855');
-INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('с. Барнаул', 'ст. Махачкала', '1200', '180');
-INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('д. Соловки', 'д. Арсеньев', '7700', '1155');
-INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('клх Сочи', 'к. Терней', '3700', '555');
-INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('ст. Витим', 'ст. Белоярский', '2200', '330');
-INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('с. Усть-Катав', 'д. Нефтекамск', '5700', '855');
-INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('п. Ейск', 'г. Находка', '200', '30');
-INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('ст. Апатиты', 'д. Домбай', '3200', '480');
-INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('д. Кашира', 'ст. Кажим', '6700', '1005');
-INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('п. Архангельск', 'с. Ряжск', '5200', '780');
-INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('с. Калач-на-Дону', 'г. Верхотурье', '1200', '180');
-INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('к. Каргополь', 'д. Белокуриха', '3200', '480');
-INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('с. Асбест', 'к. Тамбей', '1700', '255');
-INSERT INTO Trip (trip_code, trip_time, list_id) VALUES('KK9506', '1:40:00', '18');
-INSERT INTO Trip (trip_code, trip_time, list_id) VALUES('UH3390', '10:10:00', '18');
-INSERT INTO Trip (trip_code, trip_time, list_id) VALUES('QJ4800', '22:40:00', '5');
-INSERT INTO Trip (trip_code, trip_time, list_id) VALUES('FP0639', '20:20:00', '18');
-INSERT INTO Trip (trip_code, trip_time, list_id) VALUES('AI3459', '19:00:00', '18');
-INSERT INTO Trip (trip_code, trip_time, list_id) VALUES('AR6590', '1 day, 9:30:00', '10');
-INSERT INTO Trip (trip_code, trip_time, list_id) VALUES('NW6889', '1 day, 7:10:00', '14');
-INSERT INTO Trip (trip_code, trip_time, list_id) VALUES('RS4296', '1 day, 0:40:00', '14');
-INSERT INTO Trip (trip_code, trip_time, list_id) VALUES('PS3438', '23:00:00', '20');
-INSERT INTO Trip (trip_code, trip_time, list_id) VALUES('IY7851', '14:20:00', '7');
-INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('бизнес', '59000', 'Earum aliquid molestiae dicta rerum necessitatibus eos. Quae cum optio sunt reiciendis. Dicta voluptatum corporis nulla laboriosam. Dolore animi fugiat rem soluta modi.', '10');
-INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('комфорт', '29000', 'Adipisci cum magnam ad sapiente ipsa laudantium. Occaecati sed delectus.;
-Autem asperiores nostrum molestias. Rerum in quod vel in dolores vero. Consectetur sapiente quam fugiat odit.', '9');
-INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('эконом', '8500', 'Facilis repellat quaerat debitis praesentium. Itaque dolorum fugit repudiandae officiis. Libero perferendis praesentium facilis sint.', '3');
-INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('эконом', '8000', 'Reprehenderit sed eos fugit iure fugiat excepturi sit. Maiores consectetur vero cumque.;
-Distinctio laudantium dolor sint nostrum. Voluptatum illo ab fuga. Veniam corrupti eligendi.', '5');
-INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('комфорт', '18000', 'Fugiat voluptatibus sint beatae doloremque. Nostrum harum ea maiores sunt. Corrupti sunt assumenda aliquam animi beatae. Nulla et quo sunt ullam dolores harum.', '1');
-INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('комфорт', '17000', 'Illum dolore accusantium aut numquam. Necessitatibus voluptate vero cupiditate. Non praesentium iure doloremque vero dolore ullam. Earum officiis rerum laborum.', '3');
-INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('эконом', '9000', 'Deserunt molestiae commodi quo saepe.', '7');
-INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('бизнес', '79000', 'Neque quia odit autem quam neque consequuntur. Doloribus possimus magnam ut rem veniam tempora consequatur.', '4');
-INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('бизнес', '79000', 'Ipsam quas quas qui ipsa temporibus. Perferendis excepturi voluptates quibusdam. Iste ipsa ea aliquam ipsum.;
-Distinctio temporibus impedit officia molestias dolorum. Porro alias provident debitis.', '3');
-INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('комфорт', '21500', 'Facilis in numquam eligendi. Cupiditate voluptates eos.;
-Itaque sunt est tenetur. Itaque ad perspiciatis suscipit aspernatur est error.;
-Accusamus minus corrupti ducimus nulla culpa.', '5');
-INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('бизнес', '78000', 'Repellendus voluptatum vero id molestias assumenda. Suscipit doloribus dolore eum voluptatem dolorum.', '2');
-INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('эконом', '11000', 'Recusandae quisquam nemo necessitatibus rem repudiandae. Ullam hic quis. Commodi rerum fugit.;
-Totam a expedita rerum id cupiditate dolore.;
-Odit itaque alias ea dolore. Atque neque vel corporis.', '4');
-INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('бизнес', '62500', 'Modi recusandae illum dolorum. Totam doloribus aspernatur dolorem ratione. Quas ducimus dolorem consequuntur porro sapiente.', '9');
-INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('эконом', '10500', 'Modi velit animi impedit repellendus quidem. Ex corrupti a rerum. Inventore fugit rerum quas maxime soluta.', '2');
-INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('бизнес', '70500', 'Quia repudiandae amet voluptate quam unde atque. Consectetur natus aspernatur doloribus fugit magni. Voluptate labore natus sint in reprehenderit error.', '10');
-INSERT INTO Class (class_classif, class_summary, class_type) VALUES('бизнес', 'Animi in nisi. Ipsam quas deserunt. Eaque iste praesentium rem adipisci.;
-Maxime dolor aperiam veritatis recusandae. Optio doloribus nisi consequatur commodi sequi. Accusantium neque sint fugit.', 'для международный протяженности');
-INSERT INTO Class (class_classif, class_summary, class_type) VALUES('эконом', 'Illo velit a iusto facere maxime. Cum consectetur id quas.', 'для региональный протяженности');
-INSERT INTO Class (class_classif, class_summary, class_type) VALUES('эконом', 'Aut eveniet iure cumque. Vero voluptatem blanditiis accusamus blanditiis optio.;
-Minima atque tenetur eaque.', 'для местный протяженности');
-INSERT INTO Crew (crew_captian, crew_navigator, crew_steward1, crew_steward2, crew_steward3) VALUES('Сазонова Таисия Николаевна', 'Кира Егоровна Уварова', 'Владимиров Лев Андреевич', 'Пимен Алексеевич Логинов', 'Трофимов Николай Давидович');
-INSERT INTO Crew (crew_captian, crew_navigator, crew_steward1, crew_steward2, crew_steward3) VALUES('Попов Галактион Феоктистович', 'Колесников Изот Валерьянович', 'Ким Всеволодович Зыков', 'Пономарева Феврония Анатольевна', 'Сорокина Лора Эдуардовна');
-INSERT INTO Crew (crew_captian, crew_navigator, crew_steward1, crew_steward2, crew_steward3) VALUES('Мишина Александра Алексеевна', 'Феврония Юрьевна Соколова', 'Регина Тимуровна Шестакова', 'Вишнякова Лариса Дмитриевна', 'Бронислав Изотович Комиссаров');
-INSERT INTO Crew (crew_captian, crew_navigator, crew_steward1, crew_steward2, crew_steward3) VALUES('Григорьев Сергей Германович', 'Сидорова София Аскольдовна', 'Ершова Олимпиада Робертовна', 'г-н Кондратьев Ладислав Всеволодович', 'Ювеналий Архипович Волков');
-INSERT INTO Crew (crew_captian, crew_navigator, crew_steward1, crew_steward2, crew_steward3) VALUES('Марк Анисимович Сафонов', 'Серафим Богданович Дементьев', 'Моисей Жоресович Колобов', 'Зимин Алексей Артурович', 'Миронов Мечислав Адамович');
-INSERT INTO Crew (crew_captian, crew_navigator, crew_steward1, crew_steward2, crew_steward3) VALUES('Степан Дорофеевич Доронин', 'Артемьева Евдокия Яковлевна', 'Воронова Светлана Борисовна', 'Селиверстов Флорентин Димитриевич', 'Александр Жоресович Крылов');
-INSERT INTO Crew (crew_captian, crew_navigator, crew_steward1, crew_steward2, crew_steward3) VALUES('Князева Любовь Павловна', 'Раиса Ивановна Кудряшова', 'Бронислав Демьянович Тихонов', 'Лукин Борислав Терентьевич', 'Давыдова Фёкла Даниловна');
-INSERT INTO Crew (crew_captian, crew_navigator, crew_steward1, crew_steward2, crew_steward3) VALUES('Таисия Викторовна Рыбакова', 'Ия Андреевна Соловьева', 'Лариса Игоревна Субботина', 'Октябрина Сергеевна Русакова', 'Валерия Рудольфовна Пахомова');
-INSERT INTO Crew (crew_captian, crew_navigator, crew_steward1, crew_steward2, crew_steward3) VALUES('Носков Авксентий Якубович', 'Белоусов Ульян Бориславович', 'Акулина Харитоновна Беспалова', 'Орехова Елизавета Вениаминовна', 'Никифор Гордеевич Куликов');
-INSERT INTO Crew (crew_captian, crew_navigator, crew_steward1, crew_steward2, crew_steward3) VALUES('Герасимов Пантелеймон Анисимович', 'Иосиф Захарьевич Гусев', 'Кириллов Филипп Григорьевич', 'Сорокин Поликарп Афанасьевич', 'Елисеев Януарий Артемьевич');
-INSERT INTO Access_plane (crew_id, class_id) VALUES('5', '8');
-INSERT INTO Access_plane (crew_id, class_id) VALUES('4', '8');
-INSERT INTO Access_plane (crew_id, class_id) VALUES('5', '6');
-INSERT INTO Access_plane (crew_id, class_id) VALUES('9', '1');
-INSERT INTO Access_plane (crew_id, class_id) VALUES('4', '6');
-INSERT INTO Access_plane (crew_id, class_id) VALUES('7', '8');
-INSERT INTO Access_plane (crew_id, class_id) VALUES('8', '8');
-INSERT INTO Access_plane (crew_id, class_id) VALUES('1', '6');
-INSERT INTO Access_plane (crew_id, class_id) VALUES('3', '8');
-INSERT INTO Access_plane (crew_id, class_id) VALUES('6', '1');
-INSERT INTO Access_plane (crew_id, class_id) VALUES('6', '6');
-INSERT INTO Access_plane (crew_id, class_id) VALUES('4', '1');
-INSERT INTO Access_plane (crew_id, class_id) VALUES('8', '6');
-INSERT INTO Access_plane (crew_id, class_id) VALUES('7', '1');
-INSERT INTO Access_plane (crew_id, class_id) VALUES('9', '6');
-INSERT INTO Access_plane (crew_id, class_id) VALUES('2', '6');
-INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('малой', '96', '1');
-INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('большой', '198', '6');
-INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('малой', '94', '8');
-INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('большой', '176', '1');
-INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('средней', '156', '8');
-INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('большой', '192', '6');
-INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('средней', '156', '8');
-INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('большой', '198', '6');
-INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('малой', '96', '6');
-INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('малой', '96', '6');
-INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('средней', '156', '6');
-INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('средней', '156', '8');
-INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('большой', '198', '6');
-INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('малой', '96', '8');
-INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('малой', '96', '1');
-INSERT INTO Flight (flight_departure, flight_arrive, crew_id, trip_id, plane_id) VALUES('13.50 - 01/04/2022', '12.30 - 02/04/2022', '6', 3, '15');
-INSERT INTO Flight (flight_departure, flight_arrive, crew_id, trip_id, plane_id) VALUES('08.30 - 23/06/2022', '07.30 - 24/06/2022', '2', 9, '3');
-INSERT INTO Flight (flight_departure, flight_arrive, crew_id, trip_id, plane_id) VALUES('23.40 - 14/12/2021', '22.20 - 15/12/2021', '6', 3, '2');
-INSERT INTO Flight (flight_departure, flight_arrive, crew_id, trip_id, plane_id) VALUES('03.40 - 01/05/2022', '05.20 - 01/05/2022', '1', 1, '2');
-INSERT INTO Flight (flight_departure, flight_arrive, crew_id, trip_id, plane_id) VALUES('02.10 - 28/04/2022', '11.40 - 29/04/2022', '7', 6, '2');
-INSERT INTO Flight (flight_departure, flight_arrive, crew_id, trip_id, plane_id) VALUES('19.30 - 27/03/2022', '02.40 - 29/03/2022', '6', 7, '1');
-INSERT INTO Flight (flight_departure, flight_arrive, crew_id, trip_id, plane_id) VALUES('14.40 - 11/04/2022', '13.40 - 12/04/2022', '6', 9, '8');
-INSERT INTO Flight (flight_departure, flight_arrive, crew_id, trip_id, plane_id) VALUES('09.00 - 13/06/2022', '18.30 - 14/06/2022', '10', 6, '7');
-INSERT INTO Flight (flight_departure, flight_arrive, crew_id, trip_id, plane_id) VALUES('20.00 - 06/05/2022', '03.10 - 08/05/2022', '8', 7, '6');
-INSERT INTO Flight (flight_departure, flight_arrive, crew_id, trip_id, plane_id) VALUES('16.30 - 05/03/2022', '12.50 - 06/03/2022', '5', 4, '6');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Красильникова Людмила Викторовна', '6311 283999', 'L36', '14', '4');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Маркова Пелагея Сергеевна', '7215 802427', 'B133', '1', '6');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Агафья Ниловна Федосеева', '3806 954390', 'Z99', '12', '1');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Прасковья Сергеевна Исаева', '4201 147876', 'E130', '15', '10');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Рогова Жанна Леоновна', '2715 539736', 'U59', '4', '2');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Анастасия Вадимовна Терентьева', '7806 277390', 'X86', '14', '10');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Наталья Максимовна Савина', '2718 833949', 'N68', '7', '6');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Ольга Афанасьевна Воронова', '0802 089066', 'A106', '12', '2');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Оксана Евгеньевна Кондратьева', '8707 422801', 'K33', '15', '9');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Мария Аркадьевна Королева', '8007 244736', 'L149', '3', '10');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Нина Ивановна Ефремова', '7807 252150', 'F132', '7', '10');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Дарья Игоревна Мишина', '1519 763336', 'F74', '1', '8');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Мартынов Василий Викторович', '5806 888545', 'F90', '8', '2');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Сидоров Сильвестр Даниилович', '8907 807453', 'M1', '14', '9');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Светлана Вячеславовна Ковалева', '3321 777773', 'L31', '1', '8');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Ситникова Иванна Матвеевна', '6818 364317', 'W118', '13', '8');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Сергеев Афанасий Владиславович', '5110 805782', 'A73', '13', '4');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Аполлинарий Валерьевич Волков', '5503 836529', 'X47', '8', '10');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Ульян Архипович Фролов', '8719 319947', 'E86', '8', '3');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Соловьев Иннокентий Гавриилович', '6903 850939', 'G110', '1', '7');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Кир Августович Рыбаков', '0304 276181', 'N71', '5', '10');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Михаил Фомич Дементьев', '7705 615666', 'V20', '3', '7');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Игнатов Евлампий Юлианович', '0116 082390', 'A123', '10', '8');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Фомичев Андрон Филимонович', '9915 975783', 'P95', '7', '5');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Мясникова Алевтина Руслановна', '2605 792008', 'P61', '13', '3');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Агата Олеговна Горбунова', '9606 553112', 'B122', '1', '3');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Мефодий Демьянович Михайлов', '3909 025624', 'L34', '5', '6');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Корнил Викторович Рыбаков', '9610 972354', 'X95', '3', '5');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Капустина Василиса Артемовна', '5817 425228', 'M109', '3', '3');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Афанасьева Агафья Матвеевна', '8202 812782', 'Z32', '8', '3');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Наталья Тимофеевна Гаврилова', '8907 886188', 'Q75', '13', '5');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Зоя Афанасьевна Пестова', '7311 923430', 'D134', '7', '7');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Владимиров Натан Игнатович', '7318 025828', 'N12', '1', '8');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Кулаков Казимир Жоресович', '2304 391724', 'W5', '10', '3');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Мария Харитоновна Полякова', '0410 396213', 'H122', '11', '8');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Дроздова Агафья Кузьминична', '3913 729485', 'K149', '15', '9');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Филатова Вероника Вадимовна', '0620 615082', 'U55', '8', '3');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Анисимова Зоя Геннадиевна', '6513 658470', 'E50', '11', '9');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Нинель Валентиновна Алексеева', '0416 000700', 'B23', '10', '9');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Дмитриева Фёкла Макаровна', '1607 563964', 'H28', '12', '6');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Элеонора Васильевна Пестова', '7110 738055', 'S35', '1', '4');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Регина Вячеславовна Цветкова', '1420 580228', 'J58', '2', '1');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Эмилия Святославовна Михайлова', '8911 743691', 'W79', '8', '7');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('тов. Цветкова Евпраксия Харитоновна', '6320 215264', 'R73', '12', '9');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Харитон Григорьевич Щербаков', '5019 117507', 'T42', '9', '8');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Давыдов Ипатий Егорович', '2604 023457', 'M29', '3', '3');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Чеслав Ерофеевич Карпов', '3017 620730', 'L115', '8', '5');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Андрон Адрианович Трофимов', '3004 988530', 'U114', '6', '8');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Горбачева Алла Робертовна', '4514 760869', 'F50', '10', '10');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Устинова Алина Матвеевна', '2210 025083', 'N122', '15', '6');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Гришин Болеслав Антипович', '4913 686824', 'O137', '5', '2');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Евстигней Елисеевич Журавлев', '9103 074607', 'T38', '3', '1');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Ипполит Димитриевич Галкин', '5119 356396', 'G55', '1', '9');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Назаров Василий Эдгардович', '9114 600439', 'V70', '12', '7');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Николаева Полина Кирилловна', '2814 173309', 'B13', '3', '8');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Марфа Богдановна Шарапова', '7719 731757', 'U13', '1', '9');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Носкова Кира Петровна', '8709 526986', 'H60', '6', '4');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Олимпиада Вячеславовна Тарасова', '6318 225047', 'Y2', '11', '7');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Виктория Николаевна Мишина', '2320 715735', 'P145', '12', '1');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Акулина Геннадьевна Селиверстова', '0701 561017', 'Z149', '5', '5');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Харлампий Германович Прохоров', '4917 460316', 'V43', '5', '3');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Веселов Фотий Геннадиевич', '8412 184160', 'F67', '7', '1');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Беспалова Вероника Эдуардовна', '8513 009125', 'X3', '11', '1');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Жанна Макаровна Баранова', '5412 816375', 'U142', '11', '5');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Антонова Варвара Яковлевна', '4603 240230', 'T118', '13', '2');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Гурьева Ульяна Эдуардовна', '1518 248273', 'R111', '9', '4');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Анисим Терентьевич Миронов', '1017 405465', 'P79', '9', '1');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Гурьев Капитон Марсович', '0317 084416', 'J49', '8', '10');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Бобылева Вероника Ниловна', '1702 410851', 'F32', '6', '7');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Эмилия Феликсовна Маркова', '5420 162865', 'P127', '4', '5');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Антонова Феврония Олеговна', '5613 141874', 'C73', '5', '1');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Виктория Рубеновна Блинова', '7308 946537', 'V53', '5', '1');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Степанова Александра Михайловна', '8019 084153', 'C55', '9', '5');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Антонова Регина Ивановна', '0314 149372', 'H20', '12', '5');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Исаев Мокей Алексеевич', '2613 683662', 'L85', '8', '1');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Савелий Германович Стрелков', '6606 580539', 'E78', '9', '4');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Милица Ниловна Соловьева', '5614 701831', 'B58', '10', '2');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Маргарита Павловна Федорова', '4209 284822', 'W101', '2', '10');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Белоусова Нонна Максимовна', '1020 344062', 'Y111', '8', '6');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Пономарева Эмилия Леонидовна', '9107 341995', 'K130', '3', '9');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Стрелков Евдоким Дмитриевич', '1208 273613', 'B122', '12', '1');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Антонов Максим Арсенович', '7914 130821', 'S122', '1', '4');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Таисия Рубеновна Тихонова', '3019 647014', 'Q121', '12', '2');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Таисия Аскольдовна Белова', '7421 823081', 'W38', '4', '4');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Николаев Карп Федосеевич', '7711 651617', 'X94', '4', '10');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Третьяков Прокл Власович', '4402 850872', 'J13', '12', '4');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Самсонов Лукьян Адрианович', '6015 495461', 'N113', '12', '5');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Одинцов Ипат Августович', '7207 261566', 'N68', '8', '10');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Панкрат Андреевич Устинов', '8002 339347', 'G4', '10', '7');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Аггей Харламович Ершов', '0913 941319', 'Z108', '10', '4');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Сергеева Полина Станиславовна', '6610 386517', 'Y82', '2', '5');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Ольга Яковлевна Мартынова', '7512 052133', 'Z2', '4', '10');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Щукин Спиридон Абрамович', '3120 779433', 'N140', '1', '6');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Натан Зиновьевич Беляев', '0606 417028', 'C95', '14', '1');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Петр Ануфриевич Алексеев', '1711 613144', 'P134', '8', '1');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Валерьян Вячеславович Алексеев', '9512 910139', 'F112', '5', '6');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Владислав Теймуразович Константинов', '4415 004580', 'J141', '7', '5');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Валерьян Ермолаевич Сорокин', '8009 579949', 'R93', '8', '10');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Феликс Геннадиевич Соколов', '4917 926560', 'J21', '15', '2');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Денисов Филарет Юлианович', '4902 728919', 'K145', '6', '8');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Князев Петр Ермолаевич', '2115 435215', 'E131', '9', '3');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Станислав Харлампьевич Харитонов', '6405 293700', 'L3', '6', '1');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Филиппов Валерий Жоресович', '4415 144342', 'U109', '9', '9');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Сергеев Аскольд Вячеславович', '1817 401966', 'D5', '3', '2');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Емельянов Ульян Харламович', '8018 563871', 'W27', '11', '10');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Туров Ефим Витальевич', '3517 054144', 'R32', '1', '8');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Цветкова Регина Богдановна', '0512 719584', 'G91', '10', '1');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Зоя Георгиевна Воронова', '2204 343740', 'V23', '9', '4');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Константинов Изяслав Измаилович', '5707 871284', 'C44', '11', '10');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Леон Адрианович Михеев', '3421 863723', 'G61', '12', '7');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Афиноген Феликсович Иванов', '7118 328635', 'O36', '12', '9');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Баранов Ефрем Ефимович', '9115 493630', 'A70', '6', '5');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Глафира Филипповна Исаева', '3612 190327', 'O84', '5', '3');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Суворова Наталья Юльевна', '9304 825544', 'V51', '8', '5');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Соколов Аристарх Филимонович', '7907 508842', 'G31', '10', '10');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('г-н Агафонов Максимильян Даниилович', '3402 033846', 'C16', '9', '6');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Коновалов Ульян Харлампович', '9505 911449', 'L116', '13', '8');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Мариан Валерианович Медведев', '1015 410367', 'N141', '6', '2');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Ефимов Август Виленович', '0404 834567', 'Y98', '3', '2');
-INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Стоян Григорьевич Константинов', '5905 201709', 'T117', '7', '3');
+INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('с. Ижевск', 'г. Баргузин', '5700', '855')
+INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('д. Чехов', 'с. Ведено', '6200', '930')
+INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('клх Тотьма', 'к. Галич', '4200', '630')
+INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('г. Старый Оскол', 'с. Кулунда', '7200', '1080')
+INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('п. Усинск', 'г. Чермоз', '4200', '630')
+INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('п. Оймякон', 'с. Кетченеры', '5700', '855')
+INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('ст. Билибино', 'с. Миллерово', '200', '30')
+INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('п. Хоста', 'п. Павловская', '4700', '705')
+INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('клх Красноселькуп', 'ст. Абинск', '7700', '1155')
+INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('с. Гремячинск (Бурят.)', 'г. Карабудахкент', '4200', '630')
+INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('п. Тура', 'к. Красноселькуп', '5700', '855')
+INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('г. Североморск', 'д. Инта', '3200', '480')
+INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('к. Кисловодск', 'клх Лабытнанги', '7200', '1080')
+INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('ст. Миасс', 'г. Салехард', '4700', '705')
+INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('п. Белореченск', 'д. Териберка', '4700', '705')
+INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('г. Качканар', 'д. Черусти', '7200', '1080')
+INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('к. Адлер', 'д. Домбай', '1200', '180')
+INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('г. Гатчина', 'с. Элиста', '700', '105')
+INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('с. Карачаевск', 'п. Горячинск', '7200', '1080')
+INSERT INTO List (list_departure, list_arrive, list_length, list_fuel) VALUES('д. Набережные Челны', 'п. Анапа', '3200', '480')
+INSERT INTO Trip (trip_code, trip_time, list_id) VALUES('ME5809', '23:10:00', '15')
+INSERT INTO Trip (trip_code, trip_time, list_id) VALUES('UB4880', '14:50:00', '13')
+INSERT INTO Trip (trip_code, trip_time, list_id) VALUES('IJ9918', '14:00:00', '10')
+INSERT INTO Trip (trip_code, trip_time, list_id) VALUES('TG6907', '1 day, 10:10:00', '16')
+INSERT INTO Trip (trip_code, trip_time, list_id) VALUES('CG2207', '8:40:00', '7')
+INSERT INTO Trip (trip_code, trip_time, list_id) VALUES('HT5609', '1:10:00', '9')
+INSERT INTO Trip (trip_code, trip_time, list_id) VALUES('WI0437', '8:00:00', '6')
+INSERT INTO Trip (trip_code, trip_time, list_id) VALUES('CC6204', '17:40:00', '17')
+INSERT INTO Trip (trip_code, trip_time, list_id) VALUES('OS6724', '1 day, 8:20:00', '2')
+INSERT INTO Trip (trip_code, trip_time, list_id) VALUES('MC2304', '1 day, 9:30:00', '3')
+INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('комфорт', '23000', 'Quam repudiandae id fuga ipsam. Odit tempore consequatur sequi fugit mollitia. Eligendi cupiditate nam amet sed occaecati tenetur.
+Consectetur cupiditate magni voluptatibus. Sapiente numquam quas.', '10')
+INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('бизнес', '57000', 'Deserunt velit necessitatibus dolorem consequatur. Facere aliquam aspernatur adipisci maxime in distinctio eligendi.', '3')
+INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('бизнес', '63000', 'Blanditiis voluptates possimus quaerat id veniam. Asperiores voluptate quo.', '6')
+INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('эконом', '7500', 'Cupiditate inventore modi quos eveniet. In modi vel amet incidunt. Cupiditate error expedita.
+Dignissimos eaque ducimus nulla rerum voluptatum cupiditate. Dolores quis fuga voluptas.', '4')
+INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('бизнес', '77000', 'Veritatis ullam consectetur esse deleniti accusamus officiis. Pariatur ex nemo velit nobis repellendus.
+Occaecati voluptatibus commodi cumque id aliquid. Consequuntur earum odit neque.', '8')
+INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('бизнес', '64500', 'Itaque ipsa modi aperiam dolorem.
+Accusantium quaerat tenetur culpa. Atque unde deserunt odio laboriosam similique incidunt. Asperiores mollitia assumenda laudantium.', '3')
+INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('бизнес', '71000', 'Quisquam ullam harum ipsam enim molestias explicabo. Aspernatur dicta aperiam distinctio asperiores. Sequi sed culpa repellat.', '5')
+INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('эконом', '9000', 'Asperiores deserunt dignissimos exercitationem. Sit nostrum provident natus fugit fuga.', '5')
+INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('комфорт', '17000', 'Numquam animi dolore fuga deleniti consequuntur.
+Facere veritatis odit cupiditate dignissimos officiis. Eius perferendis dolor voluptatem dolore quam.', '4')
+INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('бизнес', '75000', 'Tempore rem itaque cupiditate ab iusto neque. Rerum eius accusantium dignissimos fugiat.', '9')
+INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('комфорт', '21500', 'Reprehenderit saepe tempore quidem sit. Blanditiis mollitia suscipit.
+Alias amet minima expedita doloribus.', '4')
+INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('комфорт', '23000', 'Hic deleniti aliquam vel. Incidunt molestias deleniti magni.
+Ullam repellat sequi ipsam suscipit eius.
+Voluptas animi culpa ab nesciunt. Assumenda sequi excepturi ab non cum non.', '8')
+INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('комфорт', '29000', 'Possimus dolore consequuntur molestiae. Minima explicabo voluptates voluptas quaerat nihil nam. Ipsum itaque soluta reprehenderit. Accusantium recusandae sapiente minus harum maxime ex.', '3')
+INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('бизнес', '52000', 'Veritatis minus molestiae illo.
+Commodi cupiditate cupiditate rem aut incidunt. Inventore voluptates dolorum eligendi laboriosam nemo possimus aspernatur. Assumenda magnam repellat dolorem.', '4')
+INSERT INTO Price (price_rate, price_cost, price_summary, trip_id) VALUES('эконом', '4500', 'Quasi sequi praesentium qui voluptatem vitae at magnam. Repudiandae quaerat sunt quasi numquam quis ab.
+Rerum saepe fugit ut officiis. Dignissimos iusto enim ex.', '10')
+INSERT INTO Class (class_classif, class_summary, class_type) VALUES('эконом', 'Perspiciatis autem enim facilis maxime repellat occaecati. Quos rerum ullam tempora tempore rerum.', 'для местный протяженности')
+INSERT INTO Class (class_classif, class_summary, class_type) VALUES('бизнес', 'Illum facere quisquam quia. Doloribus doloribus iusto reprehenderit ex.
+Rerum assumenda corrupti. Dolorem debitis placeat assumenda possimus. Ipsa vero voluptatibus.', 'для местный протяженности')
+INSERT INTO Class (class_classif, class_summary, class_type) VALUES('первый', 'Dignissimos beatae aliquid quaerat voluptate praesentium earum ad. Modi accusantium id et est itaque.
+Doloribus provident quam minus eos sint natus.', 'для местный протяженности')
+INSERT INTO Class (class_classif, class_summary, class_type) VALUES('бизнес', 'Voluptate nihil molestias nesciunt quo. Velit illo quas quae nihil. Quasi velit possimus quasi sapiente.', 'для региональный протяженности')
+INSERT INTO Class (class_classif, class_summary, class_type) VALUES('бизнес', 'Quam aspernatur facilis fugiat. Ipsa consectetur sint. Tempore magnam veritatis ad.
+Est ipsam sint iure magnam voluptate saepe. Autem laborum qui repellendus. Nihil laudantium vel recusandae dolorem.', 'для местный протяженности')
+INSERT INTO Class (class_classif, class_summary, class_type) VALUES('эконом', 'Adipisci officiis autem praesentium iure. Non harum fugiat unde ea. Eos earum excepturi placeat repudiandae.', 'для международный протяженности')
+INSERT INTO Class (class_classif, class_summary, class_type) VALUES('первый', 'Cupiditate at a saepe qui a.
+Fugiat cumque ex alias quidem quasi velit eaque. Sint laborum est nobis repellat unde repellat eaque.', 'для региональный протяженности')
+INSERT INTO Class (class_classif, class_summary, class_type) VALUES('первый', 'Quidem ipsum in vitae eos. Perferendis veniam corporis nemo.
+Error commodi veritatis temporibus. Quaerat esse in fugit.', 'для местный протяженности')
+INSERT INTO Class (class_classif, class_summary, class_type) VALUES('первый', 'Quis mollitia ab. Iusto omnis illo placeat omnis provident et. Quae occaecati sint distinctio nostrum. Magnam enim perspiciatis aut ad quidem pariatur assumenda.', 'для международный протяженности')
+INSERT INTO Class (class_classif, class_summary, class_type) VALUES('первый', 'Odio doloremque consequuntur repellendus quia hic laborum. Vero nihil vitae debitis. Amet nostrum odit saepe.', 'для местный протяженности')
+INSERT INTO Crew (crew_captian, crew_navigator, crew_steward1, crew_steward2, crew_steward3) VALUES('Ольга Васильевна Терентьева', 'Анжелика Харитоновна Лихачева', 'Турова Светлана Юльевна', 'Лора Петровна Ильина', 'Агата Ивановна Савина')
+INSERT INTO Crew (crew_captian, crew_navigator, crew_steward1, crew_steward2, crew_steward3) VALUES('Васильева Нинель Святославовна', 'Галина Архиповна Ларионова', 'Алина Вадимовна Котова', 'Екатерина Владимировна Крылова', 'Игнатова Синклитикия Тимофеевна')
+INSERT INTO Crew (crew_captian, crew_navigator, crew_steward1, crew_steward2, crew_steward3) VALUES('Гурий Исидорович Носов', 'Панов Осип Геннадиевич', 'Нинель Григорьевна Князева', 'Ангелина Наумовна Архипова', 'Красильникова Нина Юрьевна')
+INSERT INTO Crew (crew_captian, crew_navigator, crew_steward1, crew_steward2, crew_steward3) VALUES('Савина Ангелина Константиновна', 'Адриан Авдеевич Ларионов', 'Казаков Капитон Юлианович', 'Рябова Марфа Ильинична', 'Ирина Афанасьевна Воронцова')
+INSERT INTO Crew (crew_captian, crew_navigator, crew_steward1, crew_steward2, crew_steward3) VALUES('Лавр Анатольевич Агафонов', 'Ферапонт Ааронович Кононов', 'Анжелика Сергеевна Колобова', 'Колесникова Марина Валериевна', 'Евдоким Харлампьевич Кулагин')
+INSERT INTO Crew (crew_captian, crew_navigator, crew_steward1, crew_steward2, crew_steward3) VALUES('тов. Щербаков Софон Филиппович', 'Акулина Кирилловна Федорова', 'Силина Евдокия Николаевна', 'Эммануил Валентинович Орлов', 'Мокей Валерьевич Рожков')
+INSERT INTO Crew (crew_captian, crew_navigator, crew_steward1, crew_steward2, crew_steward3) VALUES('Амвросий Всеволодович Ефимов', 'Софрон Феофанович Костин', 'Фокина Анжелика Георгиевна', 'Антонина Вениаминовна Соловьева', 'Данилова Елена Дмитриевна')
+INSERT INTO Crew (crew_captian, crew_navigator, crew_steward1, crew_steward2, crew_steward3) VALUES('Оксана Валентиновна Фролова', 'Ким Филиппович Захаров', 'Роман Марсович Назаров', 'Авдей Матвеевич Прохоров', 'Тимофей Эдгардович Шубин')
+INSERT INTO Crew (crew_captian, crew_navigator, crew_steward1, crew_steward2, crew_steward3) VALUES('Анастасия Станиславовна Копылова', 'Алексеева Людмила Матвеевна', 'Ксения Вадимовна Маркова', 'Котова Екатерина Ждановна', 'Романов Артем Августович')
+INSERT INTO Crew (crew_captian, crew_navigator, crew_steward1, crew_steward2, crew_steward3) VALUES('Рогов Остап Богданович', 'Морозова Фёкла Юльевна', 'Сафонова Дарья Григорьевна', 'Анжела Владимировна Кошелева', 'Иванна Тарасовна Дмитриева')
+INSERT INTO Access_plane (crew_id, class_id) VALUES('6', '9')
+INSERT INTO Access_plane (crew_id, class_id) VALUES('7', '6')
+INSERT INTO Access_plane (crew_id, class_id) VALUES('4', '8')
+INSERT INTO Access_plane (crew_id, class_id) VALUES('5', '4')
+INSERT INTO Access_plane (crew_id, class_id) VALUES('1', '8')
+INSERT INTO Access_plane (crew_id, class_id) VALUES('1', '9')
+INSERT INTO Access_plane (crew_id, class_id) VALUES('1', '2')
+INSERT INTO Access_plane (crew_id, class_id) VALUES('5', '10')
+INSERT INTO Access_plane (crew_id, class_id) VALUES('10', '6')
+INSERT INTO Access_plane (crew_id, class_id) VALUES('5', '5')
+INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('малой', '96', '1')
+INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('средней', '154', '10')
+INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('большой', '198', '7')
+INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('средней', '156', '8')
+INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('средней', '153', '9')
+INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('малой', '88', '1')
+INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('большой', '198', '7')
+INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('малой', '96', '5')
+INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('средней', '156', '1')
+INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('большой', '198', '10')
+INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('средней', '156', '7')
+INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('малой', '96', '5')
+INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('средней', '156', '9')
+INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('малой', '96', '9')
+INSERT INTO Plane (plane_type, plane_places, class_id) VALUES('малой', '96', '10')
+INSERT INTO Flight (flight_departure, flight_arrive, crew_id, trip_id, plane_id) VALUES('02.20 - 10/02/2022', '11.00 - 10/02/2022', '3', 5, '9')
+INSERT INTO Flight (flight_departure, flight_arrive, crew_id, trip_id, plane_id) VALUES('12.10 - 18/03/2022', '11.20 - 19/03/2022', '3', 1, '10')
+INSERT INTO Flight (flight_departure, flight_arrive, crew_id, trip_id, plane_id) VALUES('14.50 - 26/04/2022', '08.30 - 27/04/2022', '10', 8, '6')
+INSERT INTO Flight (flight_departure, flight_arrive, crew_id, trip_id, plane_id) VALUES('11.50 - 12/11/2021', '11.00 - 13/11/2021', '1', 1, '12')
+INSERT INTO Flight (flight_departure, flight_arrive, crew_id, trip_id, plane_id) VALUES('05.50 - 29/10/2021', '19.50 - 29/10/2021', '7', 3, '12')
+INSERT INTO Flight (flight_departure, flight_arrive, crew_id, trip_id, plane_id) VALUES('11.50 - 07/06/2022', '05.30 - 08/06/2022', '10', 8, '13')
+INSERT INTO Flight (flight_departure, flight_arrive, crew_id, trip_id, plane_id) VALUES('02.00 - 30/10/2021', '10.00 - 30/10/2021', '4', 7, '5')
+INSERT INTO Flight (flight_departure, flight_arrive, crew_id, trip_id, plane_id) VALUES('07.40 - 30/10/2021', '21.40 - 30/10/2021', '10', 3, '8')
+INSERT INTO Flight (flight_departure, flight_arrive, crew_id, trip_id, plane_id) VALUES('07.00 - 09/10/2021', '15.40 - 09/10/2021', '6', 5, '4')
+INSERT INTO Flight (flight_departure, flight_arrive, crew_id, trip_id, plane_id) VALUES('19.30 - 04/12/2021', '09.30 - 05/12/2021', '3', 3, '1')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Селиверст Харитонович Никитин', '4612 038406', 'L44', '3', '2')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Воронцов Любим Викторович', '5214 281534', 'V83', '15', '4')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Боброва Наталья Альбертовна', '9508 429763', 'E107', '5', '7')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Агафья Сергеевна Дементьева', '6918 228753', 'Y106', '6', '4')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Ираида Романовна Богданова', '7221 550331', 'Z131', '10', '10')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Полина Геннадиевна Ефимова', '6317 715074', 'K92', '7', '8')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Регина Семеновна Меркушева', '5106 797385', 'X96', '2', '6')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Жанна Святославовна Блинова', '0511 777146', 'B15', '4', '3')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Наталья Валентиновна Костина', '5808 112290', 'A62', '6', '10')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Олимпиада Харитоновна Елисеева', '9318 790600', 'U126', '5', '2')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Третьяков Ким Измаилович', '8906 333245', 'T31', '7', '7')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Федот Авдеевич Жуков', '0802 929322', 'S18', '6', '1')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Светлана Ильинична Александрова', '6415 254714', 'V34', '15', '6')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Филиппова Ксения Натановна', '6015 694474', 'Z25', '7', '1')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Жуков Епифан Фёдорович', '4206 839663', 'A77', '12', '4')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Громов Николай Терентьевич', '7207 214741', 'Y90', '13', '7')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Роман Игнатьевич Пахомов', '6410 178858', 'L124', '15', '10')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Рожков Константин Трофимович', '0415 352311', 'T1', '14', '10')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Эмиль Абрамович Степанов', '8920 834207', 'P60', '1', '4')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Максимильян Гаврилович Волков', '3408 417457', 'H24', '15', '4')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Марков Зосима Васильевич', '6218 954201', 'W122', '15', '10')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Ларионов Прохор Теймуразович', '6417 040825', 'I107', '8', '4')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Ипатий Эдуардович Исаков', '5310 784279', 'M143', '4', '8')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Блинов Афиноген Тарасович', '0209 155063', 'R72', '1', '10')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Комаров Твердислав Ильясович', '7712 876880', 'I120', '10', '7')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Крылов Валерий Марсович', '1611 563343', 'E99', '11', '1')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Зимин Аристарх Адрианович', '0402 644026', 'Q97', '8', '3')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('тов. Захаров Мечислав Венедиктович', '5516 685881', 'L44', '2', '9')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Комаров Василий Валентинович', '1311 013997', 'A59', '9', '5')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Ладислав Адамович Дмитриев', '8718 929388', 'W132', '2', '1')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Мартьян Теймуразович Ширяев', '3611 437429', 'M127', '15', '7')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Кузнецов Изот Тарасович', '9410 229241', 'V115', '5', '9')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Тимофей Валерианович Кузьмин', '2207 320113', 'R47', '12', '8')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Рябов Иосиф Григорьевич', '8010 671418', 'M42', '4', '2')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Буров Эмиль Игнатьевич', '2211 260375', 'W134', '8', '10')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Бажен Измаилович Щербаков', '6705 339872', 'S46', '8', '1')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Лобанова Прасковья Антоновна', '7903 383372', 'E49', '6', '3')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('г-жа Ларионова Нинель Натановна', '0602 826006', 'B144', '14', '9')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Ия Тимуровна Киселева', '5621 878363', 'T110', '13', '10')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Олимпиада Аркадьевна Емельянова', '5002 434634', 'P78', '6', '1')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Наркис Геннадиевич Журавлев', '3204 191393', 'C89', '13', '3')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Фомичев Соломон Владиленович', '7212 994478', 'K139', '4', '1')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Горбачев Кирилл Анатольевич', '8519 922574', 'A72', '15', '6')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Лихачев Никита Егорович', '4808 466819', 'T142', '11', '7')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Галина Евгеньевна Комиссарова', '4016 125704', 'Q37', '14', '4')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Любовь Вениаминовна Панова', '2218 015672', 'L49', '13', '7')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Осипова Алевтина Мироновна', '1018 553979', 'I76', '3', '6')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Варвара Георгиевна Родионова', '0604 006440', 'U91', '13', '6')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Сафонов Климент Измаилович', '0407 821514', 'D131', '14', '1')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Сорокин Боян Бенедиктович', '6621 534996', 'B7', '3', '8')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Венедикт Аверьянович Ильин', '3121 287079', 'R40', '14', '9')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Бажен Эдгарович Дроздов', '9803 383252', 'F80', '5', '4')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Яковлев Артемий Игоревич', '6901 857925', 'M12', '13', '8')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Тарас Ануфриевич Виноградов', '5303 700688', 'Z77', '5', '2')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Мухина Маргарита Архиповна', '0919 855340', 'N131', '14', '7')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Ульяна Станиславовна Суханова', '1216 887121', 'C16', '14', '6')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Зиновьева Лидия Андреевна', '1021 476553', 'H49', '15', '8')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Селезнева Ия Макаровна', '6817 985413', 'S128', '12', '6')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Тамара Святославовна Кузнецова', '6812 278209', 'S125', '4', '8')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Глафира Дмитриевна Дьячкова', '8819 754170', 'I19', '5', '5')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Карпов Ратибор Феофанович', '2003 777396', 'O132', '14', '1')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Бажен Харитонович Алексеев', '0512 994518', 'L2', '1', '6')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Октябрина Валериевна Авдеева', '6813 212191', 'K117', '15', '8')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Тамара Аскольдовна Рожкова', '1419 372420', 'L23', '13', '1')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('г-н Поляков Леон Валентинович', '8306 812104', 'Z88', '7', '6')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Лев Измаилович Туров', '1905 372285', 'V149', '9', '1')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Олимпий Владленович Лазарев', '0320 495876', 'I73', '10', '3')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Аверкий Борисович Трофимов', '2704 558958', 'F124', '9', '5')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Ратибор Дмитриевич Киселев', '9502 886335', 'X138', '3', '7')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Тарасов Антип Жанович', '7607 220548', 'Y44', '7', '3')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Ольга Сергеевна Соболева', '1812 921953', 'X101', '8', '1')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Светлана Петровна Попова', '5517 206085', 'G99', '7', '5')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Данилов Давыд Ануфриевич', '1001 436855', 'W122', '6', '6')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Федот Трофимович Горбачев', '1015 580832', 'N148', '11', '10')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Владимиров Орест Данилович', '4605 374867', 'H129', '1', '5')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Калинин Федот Бориславович', '7401 038998', 'K61', '8', '6')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Панова Ксения Максимовна', '6309 331131', 'E70', '5', '9')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Красильникова Милица Болеславовна', '0602 130100', 'D96', '15', '9')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Харитонов Нифонт Устинович', '3617 355643', 'E17', '2', '7')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Пестов Аникей Бориславович', '2621 189573', 'S92', '7', '5')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Арефий Анисимович Орехов', '2213 849292', 'Y81', '4', '1')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Прохоров Гордей Брониславович', '3920 884772', 'Y117', '14', '10')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Медведев Антип Гаврилович', '6305 971533', 'B77', '14', '7')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Фотий Дмитриевич Агафонов', '5401 886522', 'O136', '4', '1')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Елена Петровна Семенова', '0211 330401', 'Z22', '2', '10')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Калинина Кира Федоровна', '5210 601667', 'C3', '10', '9')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Эмилия Вячеславовна Белова', '3806 378968', 'E53', '10', '4')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Марина Олеговна Григорьева', '0913 344028', 'J26', '13', '8')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Белозерова Мария Георгиевна', '4211 790504', 'O107', '9', '2')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Ефремова Прасковья Рудольфовна', '1209 840929', 'J2', '2', '6')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Уварова Ольга Никифоровна', '4019 276886', 'K34', '4', '10')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Зайцева Анжела Антоновна', '9108 966222', 'Y44', '11', '8')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Королев Фортунат Арсенович', '9109 091180', 'I11', '2', '10')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Дорофеев Лука Игнатьевич', '8309 115581', 'Q116', '6', '5')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Селезнев Ермолай Эдгарович', '8811 320793', 'V110', '11', '5')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Матвей Феоктистович Вишняков', '8404 426304', 'Q107', '10', '8')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Симонов Александр Ярославович', '8601 336578', 'S132', '1', '5')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Поликарп Ефремович Филатов', '9815 385952', 'T107', '10', '4')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('г-жа Крюкова Анжелика Робертовна', '3207 079676', 'G10', '3', '3')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Прохорова Анжела Валентиновна', '5813 574751', 'L97', '9', '8')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('г-н Цветков Ерофей Валентинович', '1412 886830', 'I72', '2', '2')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Лобанов Эмиль Власович', '7518 713853', 'P148', '10', '10')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('г-жа Селезнева Вероника Степановна', '3812 533492', 'F7', '2', '9')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Татьяна Афанасьевна Зиновьева', '8118 078685', 'J133', '5', '5')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Денис Елизарович Колобов', '9401 007537', 'L134', '12', '2')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Галкин Максимильян Ермилович', '2407 384513', 'A112', '5', '2')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Зосима Бенедиктович Белозеров', '2610 479261', 'R43', '1', '4')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Кондратий Ярославович Власов', '4117 124748', 'G105', '11', '5')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Харитонов Радислав Устинович', '8003 020312', 'W50', '13', '8')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Святослав Валерианович Щукин', '2506 293204', 'N26', '8', '8')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Анжела Ждановна Евдокимова', '1807 180838', 'E53', '5', '10')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Кулакова Прасковья Артемовна', '5114 455856', 'O87', '4', '3')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Фаина Натановна Большакова', '0813 025620', 'K34', '7', '6')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Потапова Оксана Тимофеевна', '5108 285909', 'D106', '4', '6')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Орлова Наина Валериевна', '3714 560782', 'Y60', '9', '4')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Беляева Мария Альбертовна', '3909 400468', 'G34', '12', '2')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Шашков Тихон Абрамович', '7719 312302', 'B69', '6', '10')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Сафонов Леонтий Егорович', '7501 196095', 'L98', '13', '9')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Юдин Ратибор Герасимович', '4713 443629', 'Y76', '8', '10')
+INSERT INTO Passenger (passenger_name, passenger_passport, passenger_number, price_id, flight_id) VALUES('Брагин Корнил Игнатович', '7703 255203', 'C106', '7', '10')

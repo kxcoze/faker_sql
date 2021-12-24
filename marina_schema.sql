@@ -11,8 +11,8 @@ DROP TABLE IF EXISTS access_plane CASCADE;
 CREATE TABLE IF NOT EXISTS List (
 	PRIMARY KEY(list_id),
 	list_id INT GENERATED ALWAYS AS IDENTITY,
-	list_departure VARCHAR(20),
-	list_arrive VARCHAR(20),
+	list_departure VARCHAR(100),
+	list_arrive VARCHAR(100),
 	list_length INT,
 	list_fuel INT
 );
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS Class (
 	class_id INT GENERATED ALWAYS AS IDENTITY,
 	class_classif VARCHAR(30),
 	class_summary VARCHAR(350),
-	class_type VARCHAR(50) UNIQUE
+	class_type VARCHAR(50)
 );
 
 CREATE TABLE IF NOT EXISTS Crew (
