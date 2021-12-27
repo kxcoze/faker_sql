@@ -30,7 +30,7 @@ def generate_insert_query(faker):
     special_ind = None
     for i in range(count_fk_column):
         foreign_table = input("Input name of table that your column are references to: ")
-        if foreign_table == 'hall' or foreign_table == 'room' or foreign_table == 'trip_time': 
+        if foreign_table in ('hall', 'room', 'trip_time', 'list'): 
             if foreign_table == 'trip_time':
                 foreign_table = 'trip'
             special_foreign_table = foreign_table
@@ -53,11 +53,13 @@ def generate_insert_query(faker):
                     fk_values.append(str(f.room_id))
                 elif special_foreign_table == 'trip':
                     fk_values.append(str(f.trip_id))
+                elif special_foreign_table == 'list':
+                    fk_values.append(str(f.list_id))
             else:
                 fk_values.append(choice(x))
         
 
-        query = f"INSERT INTO {table_name.capitalize()} ({', '.join(native_columns+foreign_columns)}) VALUES({', '.join(values+fk_values)})"
+        query = f"INSERT INTO {table_name.capitalize()} ({', '.join(native_columns+foreign_columns)}) VALUES({', '.join(values+fk_values)});"
         print(query)
         if execute(query):
             queries.append(query)

@@ -294,7 +294,8 @@ class MarinaFaker(MainFaker):
     def __init__(self):
         super().__init__()
         self.unique = {
-            'type': set()
+            'type': set(),
+            'list': set(),
         }
         self.arrive = ''
         self.departure = ''
@@ -363,6 +364,18 @@ class MarinaFaker(MainFaker):
 #        return self.date1.strftime('%H.%M - %d/%m/%Y'), date2.strftime('%H.%M - %d/%m/%Y')
     def trip_time(self):
         return timedelta(hours=self.f.random_int(min=1, max=36), minutes=self.f.random_int(min=0, max=60, step=10))
+    
+    def trip_name(self):
+        result = fetch_many('list')
+        self.list_id = self.f.random_element(result)[0]
+        departure = fetch_by_id('list', self.list_id, attr='departure')[0].split()[1]
+        arrive = fetch_by_id('list', self.list_id, attr='arrive')[0].split()[1]
+        while self.list_id in self.unique['list'] and len(self.unique['list']) != len(result):
+            self.list_id = self.f.random_element(result)[0]
+            departure = fetch_by_id('list', self.list_id, attr='departure')[0].split()[1]
+            arrive = fetch_by_id('list', self.list_id, attr='arrive')[0].split()[1]
+        self.unique['list'].add(self.list_id)
+        return f'{departure}—{arrive}'
 
     def price_rate(self): 
         self.rate = self.f.random_element(elements=self._rate.keys())
@@ -392,21 +405,17 @@ class MarinaFaker(MainFaker):
     def flight_departure(self):
         self.date = self.f.date_between('-3M', '+6M')
         self.date1 = datetime(self.date.year, self.date.month, self.date.day) + timedelta(hours=self.f.random_int(min=1, max=23),minutes=self.f.random_int(min=0, max=50, step=10))
-        return self.date1.strftime('%H.%M - %d/%m/%Y')
+        return self.date1.strftime('%Y-%m-%d %H:%M')
 
     def flight_arrive(self):
         self.trip_id = self.f.random_element(fetch_many('trip'))[0]
-        hours = fetch_by_id('trip', self.trip_id, attr='time')[0]
-        res = hours.split()
-        if res[0].isdigit():
-            day=res[0]
-        else:
-            day=0
-        hour, minute, _ = res[-1].split(':')
-        delta = timedelta(days=int(day), hours=int(hour), minutes=int(minute))
+        delta = fetch_by_id('trip', self.trip_id, attr='time')[0]
         self.date2 = self.date1 + delta
-        return self.date2.strftime('%H.%M - %d/%m/%Y')
+        return self.date2.strftime('%Y-%m-%d %H:%M')
     
+    def crew_level(self):
+        return self.f.random_int(min=1, max=3)
+
 def main():
     f = MarinaFaker()
     print(f._get_methods().keys())
@@ -414,7 +423,7 @@ def main():
         #print(f.type_plane(), f.cnt_plane())
         #print(f.list_departure(), f.list_arrive(), f.list_length(), f.list_fuel())
         #print(f.trip_code())
-        print(f.flight_departure(), f.flight_arrive())
+        print(f.trip_name())
 
 
 if __name__ == '__main__':

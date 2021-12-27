@@ -20,8 +20,9 @@ CREATE TABLE IF NOT EXISTS List (
 CREATE TABLE IF NOT EXISTS Trip (
 	PRIMARY KEY(trip_id),
 	trip_id INT GENERATED ALWAYS AS IDENTITY,
+	trip_name VARCHAR(50),
 	trip_code CHAR(6),
-	trip_time VARCHAR(30),
+	trip_time INTERVAL,
 	list_id INT,
 
 	FOREIGN KEY (list_id)
@@ -59,7 +60,7 @@ CREATE TABLE IF NOT EXISTS Crew (
 	crew_steward1 VARCHAR(50),
 	crew_steward2 VARCHAR(50),
 	crew_steward3 VARCHAR(50),
-	crew_level VARCHAR(20) UNIQUE
+	crew_level INT
 );
 
 CREATE TABLE IF NOT EXISTS Access_Plane(
@@ -85,8 +86,8 @@ CREATE TABLE IF NOT EXISTS Plane (
 CREATE TABLE IF NOT EXISTS Flight (
 	PRIMARY KEY (flight_id), 
 	flight_id INT GENERATED ALWAYS AS IDENTITY,
-	flight_departure VARCHAR(50), 
-	flight_arrive VARCHAR(50),
+	flight_departure TIMESTAMP, 
+	flight_arrive TIMESTAMP,
     crew_id INT,
 	trip_id INT, 
 	plane_id INT,
