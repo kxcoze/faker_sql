@@ -6,7 +6,6 @@ DROP TABLE IF EXISTS Info CASCADE;
 CREATE TABLE IF NOT EXISTS Player (
 	id 						INT GENERATED ALWAYS AS IDENTITY,
 	name 					VARCHAR(64),
-	date_birth		DATE,
 	height 				NUMERIC(5, 2),
 	weight 				NUMERIC(5, 2), -- in Kilograms
 	salary				MONEY,
