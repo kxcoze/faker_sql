@@ -30,8 +30,8 @@ def generate_insert_query(faker):
     special_ind = None
     for i in range(count_fk_column):
         foreign_table = input("Input name of table that your column are references to: ")
-        if foreign_table in ('hall', 'room', 'trip_time', 'list'): 
-            if foreign_table == 'trip_time':
+        if foreign_table in ('hall', 'room', 'trip_price', 'trip_time', 'trip_flight', 'list'): 
+            if foreign_table.startswith('trip'):
                 foreign_table = 'trip'
             special_foreign_table = foreign_table
             special_ind = i

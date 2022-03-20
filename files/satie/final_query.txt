@@ -1,0 +1,31 @@
+4
+trainer
+7 0
+name name
+gender gender
+dob dob
+passport passport
+category_sport category
+tel tel
+addr addr
+5
+
+service_trainer
+0 2
+service
+trainer
+15
+
+customer
+2 1
+name name
+tel tel
+discount
+30
+
+customer_subscription
+0 2
+customer
+subscription
+30
+

@@ -1,0 +1,28 @@
+4
+category
+3 0
+category_classif classif
+category_desc desc
+category_price price
+6
+
+client
+2 0
+name name
+tel tel
+20
+
+room
+2 1
+room_date_in date_in
+room_date_out date_out
+category
+30
+
+reservation
+1 2
+reservation_date date
+room
+client
+50
+

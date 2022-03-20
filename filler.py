@@ -86,6 +86,7 @@ class SatieFaker(MainFaker):
             'sub_name': set(),
             'hall': set(),
             'timetable': set(),
+            'service': set(),
         }
         self.id = ''
         self._sub_name = ''
@@ -98,15 +99,24 @@ class SatieFaker(MainFaker):
             'Ежедневно, 9:00-21:00',
         )
 
-        self.subscription = {
-            'Разовый (по выбору)': '800',
-            'Месячный (4 занятия)': '2000',
-            'Месячный (8 занятий)': '3500',
-            'Месячный (безлимит)': '5000',
-            'Полугодовой (безлимит)': '9000',
-            'Годовой (безлимит)': '15000',
-        }
+#        self.subscription = {
+#            'Разовый (по выбору)': '800',
+#            'Месячный (4 занятия)': '2000',
+#            'Месячный (8 занятий)': '3500',
+#            'Месячный (безлимит)': '5000',
+#            'Полугодовой (безлимит)': '9000',
+#            'Годовой (безлимит)': '15000',
+#        }
 
+        self.subscription = {
+            'Разовый (бассейн)': '1200',
+            'Разовый (зал)': '1100',
+            'Разовый (фитнес)': '900',
+            'Месячный (бассейн, фитнес, зал)': '2000',
+            'Полугодовой (бассейн, фитнес, зал)': '9000',
+            'Годовой (бассейн, фитнес, зал)': '15000',
+        }
+        
         self.halls_services = {
             'Бассейн': (
                 'Бассейн',
@@ -171,9 +181,16 @@ class SatieFaker(MainFaker):
         # Warning! Here's a Crutch
         self.hall_id = self.f.random_element(fetch_many('hall'))[0]
         hall_name = fetch_by_id('hall', self.hall_id, attr='name')[0]
-        service_name = self.halls_services[hall_name]
-        return self.f.random_element(service_name)
+        self._service_name = self.f.random_element(self.halls_services[hall_name])
+        # Warning! Odd implement of an idea!
+        while self._service_name in self.unique['service'] and len(self.unique['service']) != sum([len(x) for x in self.halls_services.values()]):
+            self.hall_id = self.f.random_element(fetch_many('hall'))[0]
+            hall_name = fetch_by_id('hall', self.hall_id, attr='name')[0]
+            self._service_name = self.f.random_element(self.halls_services[hall_name])
+        self.unique['service'].add(self._service_name)
+        return self._service_name
         
+
     def service_price(self):
         return self.f.random_int(min=300, max=800, step=100)
 
@@ -296,7 +313,11 @@ class MarinaFaker(MainFaker):
         self.unique = {
             'type': set(),
             'list': set(),
+            'price': set(),
+            'trip': set(),
+            'trip_time': set(),
         }
+        self.trip_id = ''
         self.arrive = ''
         self.departure = ''
         self.type = ''
@@ -377,9 +398,26 @@ class MarinaFaker(MainFaker):
         self.unique['list'].add(self.list_id)
         return f'{departure}—{arrive}'
 
+    def get_trip_id(self):
+        result = fetch_many('trip')
+        self.trip_id = self.f.random_element(result)[0]
+        while self.trip_id in self.unique['trip'] and len(self.unique['trip']) != len(result):
+            self.trip_id = self.f.random_element(result)[0]
+        return self.trip_id
+
     def price_rate(self): 
-        self.rate = self.f.random_element(elements=self._rate.keys())
-        return self.rate
+        if not self.trip_id:
+            self.trip_id = self.get_trip_id()
+        if len(self.unique['price']) == len(self._rate.keys()):
+            self.unique['price'] = set()
+            self.unique['trip'].add(self.trip_id)
+            self.trip_id = self.get_trip_id()
+        for x in self._rate.keys():
+            if x in self.unique['price']:
+                continue
+            self.rate = x
+            self.unique['price'].add(x)
+            return self.rate
 
     def price_price(self): 
         a, b = self._rate[self.rate]
@@ -408,7 +446,11 @@ class MarinaFaker(MainFaker):
         return self.date1.strftime('%Y-%m-%d %H:%M')
 
     def flight_arrive(self):
-        self.trip_id = self.f.random_element(fetch_many('trip'))[0]
+        result = fetch_many('trip')
+        self.trip_id = self.f.random_element(result)[0]
+        while self.trip_id in self.unique['trip_time'] and len(self.unique['trip_time']) != len(result):
+            self.trip_id = self.f.random_element(result)[0]
+        self.unique['trip_time'].add(self.trip_id)
         delta = fetch_by_id('trip', self.trip_id, attr='time')[0]
         self.date2 = self.date1 + delta
         return self.date2.strftime('%Y-%m-%d %H:%M')
@@ -419,11 +461,13 @@ class MarinaFaker(MainFaker):
 def main():
     f = MarinaFaker()
     print(f._get_methods().keys())
-    for i in range(20):
+    for i in range(12):
         #print(f.type_plane(), f.cnt_plane())
         #print(f.list_departure(), f.list_arrive(), f.list_length(), f.list_fuel())
         #print(f.trip_code())
-        print(f.trip_name())
+        print(f.price_rate())
+        print(f.price_price())
+        print(f.trip_id)
 
 
 if __name__ == '__main__':
