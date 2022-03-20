@@ -17,8 +17,8 @@ CREATE TABLE IF NOT EXISTS Stat (
 	id 			 			INT GENERATED ALWAYS AS IDENTITY,
 	goals 		 		INT,
 	assists 	 		INT,
-	penalty_time 	INTERVAL,
 	playtime			INTERVAL,
+	penalty_time 	INTERVAL,
 	player_id			INT,
 
 	PRIMARY KEY (id),
