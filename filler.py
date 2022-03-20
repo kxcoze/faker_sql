@@ -1,6 +1,8 @@
-from random import choice
+from random import choice, shuffle
 from datetime import datetime, timedelta
 from pprint import pprint
+from collections import OrderedDict
+from itertools import cycle
 
 from faker import Faker
 from db import fetch_many, fetch_by_id
@@ -11,7 +13,7 @@ class MainFaker:
         self.f = Faker("ru_RU")
         self.set_of_unique = set()
         self.sex = ''
-    
+
     def id(self):
         id = self.f.random_int(min=1, max=10**4-1)
         while id in self.set_of_unique:
@@ -19,7 +21,13 @@ class MainFaker:
         self.set_of_unique.add(id)
         return str(id)
 
-    def name(self):
+    def name_male(self):
+        return self.f.name_male()
+
+    def name_female(self):
+        return self.f.name_female()
+
+    def name_with_gender(self):
         if self.gender() == 'М':
             return self.f.name_male()
         return self.f.name_female()
@@ -48,7 +56,7 @@ class MainFaker:
         ser_suffix = self._upgrade_int(
                 self.f.random_int(min=1, max=21))
         number = self._upgrade_int(
-                self.f.random_int(min=1, max=10**6-1), 
+                self.f.random_int(min=1, max=10**6-1),
                 6,
         )
         return ser_prefix + ser_suffix + ' ' + number
@@ -58,7 +66,7 @@ class MainFaker:
 
     def date(self):
         return self.f.date_between(start_date='-5y', end_date='-4m')
-    
+
     def text(self):
         """Return lorem ipsum"""
         return Faker('la').text()
@@ -66,8 +74,10 @@ class MainFaker:
     def _get_methods(self):
         methods = {}
         for attr in dir(self):
+            if attr.startswith('_'):
+                continue
             method = getattr(self, attr)
-            if not attr.startswith('_') and callable(method):
+            if callable(method):
                 methods[attr] = method
         return methods
 
@@ -116,7 +126,7 @@ class SatieFaker(MainFaker):
             'Полугодовой (бассейн, фитнес, зал)': '9000',
             'Годовой (бассейн, фитнес, зал)': '15000',
         }
-        
+
         self.halls_services = {
             'Бассейн': (
                 'Бассейн',
@@ -143,13 +153,13 @@ class SatieFaker(MainFaker):
                 'Детская комната',
             ),
         }
-    
+
     def hall(self):
         hall = self.f.random_element(self.halls_services.keys())
         while hall in self.unique['hall'] and len(self.unique['hall']) != len(self.halls_services.keys()):
             hall = self.f.random_element(self.halls_services.keys())
         self.unique['hall'].add(hall)
-        
+
         return hall
 
     def timetable(self):
@@ -176,7 +186,7 @@ class SatieFaker(MainFaker):
 
     def discount(self):
         return self.f.random_int(min=10, max=30, step=5)
-    
+
     def service_name(self):
         # Warning! Here's a Crutch
         self.hall_id = self.f.random_element(fetch_many('hall'))[0]
@@ -189,7 +199,7 @@ class SatieFaker(MainFaker):
             self._service_name = self.f.random_element(self.halls_services[hall_name])
         self.unique['service'].add(self._service_name)
         return self._service_name
-        
+
 
     def service_price(self):
         return self.f.random_int(min=300, max=800, step=100)
@@ -206,8 +216,7 @@ class SatieFaker(MainFaker):
         )
         discount = {"высшей": 20, "первой": 15, "второй": 10}
         result = choice(options)
-        return f"тренер {result} квалификационной категории"   
-
+        return f"тренер {result} квалификационной категории"
 
 class TanyaFaker(MainFaker):
     def __init__(self):
@@ -233,8 +242,8 @@ class TanyaFaker(MainFaker):
                 2: ('наличие мини-бара, сейфа, телевизора, кондиционера, капсульной кофемашины; двуспальная кровать не менее 200 на 220; наличие халата, тапочек, полотенец, фена, люксовых умывальных принадлежностей; теплый пол в ванной комнате, джакузи, сауна; гипоаллергенные постельные принадлежности; уборка 2 раза в день и бесплатно при вызове; рабочий стол; парковочное место в подземном паркинге бесплатно.', 70000),
             },
         }
-    
-    def category_classif(self): 
+
+    def category_classif(self):
         self.category = self.f.random_element(self._category.keys())
         self.property = self.f.random_int(min=1, max=2)
         while (self.category, self.property) in self.unique['category'] and len(self.unique['category']) != len(self._category)*2:
@@ -243,7 +252,7 @@ class TanyaFaker(MainFaker):
         self.unique['category'].add((self.category, self.property))
         return self.category
 
-    def category_desc(self): 
+    def category_desc(self):
         return self._category[self.category][self.property][0]
 
     def category_price(self):
@@ -253,61 +262,19 @@ class TanyaFaker(MainFaker):
         self.date_in = self.f.date_between('-3M', '+6M')
         return self.date_in
 
-    def room_date_out(self): 
+    def room_date_out(self):
         start_date = datetime(self.date_in.year, self.date_in.month, self.date_in.day)
         self.date_out = self.f.date_between(start_date+timedelta(days=1), start_date+timedelta(days=90))
         return self.date_out
 
-    def reservation_date(self): 
+    def reservation_date(self):
         self.room_id = self.f.random_element(fetch_many('room'))[0]
         date_in = fetch_by_id('room', self.room_id, attr='date_in')[0]
         start_date = datetime(date_in.year, date_in.month, date_in.day)
         return self.f.date_between(start_date-timedelta(days=14), start_date-timedelta(days=1))
 
-class MyFaker(MainFaker):
-    
-    def __init__(self):
-        super().__init__()
-        self.unique = {
-            'ws': 0,
-            'comp': 0,
-            'prod': 0,
-        }
-
-    def price(self):
-        return self.f.random_int(min=100, max=10**4, step=100)
-
-    def amount(self):
-        # Similar to count
-        return self.f.random_int(min=1, max=20)
-
-    def remain(self):
-        return self.f.random_int(min=0, max=50)
-
-    def ws_name(self):
-        # ws1, ws2, ws3 ... wsn.
-        self.unique['ws'] += 1
-        return f"Цех{self.unique['ws']}" 
-    
-    def product_name(self):
-        # prod1, prod2, prod3 ... prodn.
-        self.unique['prod'] += 1
-        return f"Изделие{self.unique['prod']}" 
-
-    def product_desc(self):
-        return Faker('la').text(100)
-
-    def component_name(self):
-        # comp1, comp2, comp3 ... compn.
-        self.unique['comp'] += 1
-        return f"Деталь{self.unique['comp']}" 
-
-    def component_time(self):
-        # Random amount of time to create a component
-        return self.f.random_int(min=1, max=4)
-
 class MarinaFaker(MainFaker):
-    
+
     def __init__(self):
         super().__init__()
         self.unique = {
@@ -351,7 +318,7 @@ class MarinaFaker(MainFaker):
 
     def plane_places(self):
         return self.count_places
-    
+
     def list_departure(self):
         self.departure = self.f.city()
         return self.departure
@@ -365,7 +332,7 @@ class MarinaFaker(MainFaker):
     def list_length(self):
         self.length = self.f.random_int(min=200, max=8000, step=500)
         return self.length
-    
+
     def list_fuel(self):
         return self.length * 15 // 100
 
@@ -380,12 +347,12 @@ class MarinaFaker(MainFaker):
 
 #    def trip_time(self):
 #        self.date = self.f.date_between('-3M', '+6M')
-#        self.date1 = datetime(self.date.year, self.date.month, self.date.day) + timedelta(hours=self.f.random_int(min=1, max=23), minutes=self.f.random_int(min=0, max=60, step=10)) 
+#        self.date1 = datetime(self.date.year, self.date.month, self.date.day) + timedelta(hours=self.f.random_int(min=1, max=23), minutes=self.f.random_int(min=0, max=60, step=10))
 #        date2 = self.date1 + timedelta(hours=self.f.random_int(min=3, max=36), minutes=self.f.random_int(min=0, max=60, step=10))
 #        return self.date1.strftime('%H.%M - %d/%m/%Y'), date2.strftime('%H.%M - %d/%m/%Y')
     def trip_time(self):
         return timedelta(hours=self.f.random_int(min=1, max=36), minutes=self.f.random_int(min=0, max=60, step=10))
-    
+
     def trip_name(self):
         result = fetch_many('list')
         self.list_id = self.f.random_element(result)[0]
@@ -405,7 +372,7 @@ class MarinaFaker(MainFaker):
             self.trip_id = self.f.random_element(result)[0]
         return self.trip_id
 
-    def price_rate(self): 
+    def price_rate(self):
         if not self.trip_id:
             self.trip_id = self.get_trip_id()
         if len(self.unique['price']) == len(self._rate.keys()):
@@ -419,7 +386,7 @@ class MarinaFaker(MainFaker):
             self.unique['price'].add(x)
             return self.rate
 
-    def price_price(self): 
+    def price_price(self):
         a, b = self._rate[self.rate]
         return self.f.random_int(min=a*1000, max=b*1000, step=500)
 
@@ -428,16 +395,16 @@ class MarinaFaker(MainFaker):
         #date_in = fetch_by_id('room', self.room_id, attr='date_in')[0]
         # Need fetch plane places from db
         return self.f.random_uppercase_letter() + str(self.f.random_int(min=1, max=150))
-        
-    def class_type(self): 
+
+    def class_type(self):
         type_ = self.f.random_element(elements=self._class_type)
         return f'для {type_} протяженности'
-    
-    def class_classif(self): 
+
+    def class_classif(self):
         return self.f.random_element(elements=self._class_classif)
 
-    def class_summary(self): 
-        # loremipsum 
+    def class_summary(self):
+        # loremipsum
         pass
 
     def flight_departure(self):
@@ -454,21 +421,109 @@ class MarinaFaker(MainFaker):
         delta = fetch_by_id('trip', self.trip_id, attr='time')[0]
         self.date2 = self.date1 + delta
         return self.date2.strftime('%Y-%m-%d %H:%M')
-    
+
     def crew_level(self):
         return self.f.random_int(min=1, max=3)
 
+class MyFaker(MainFaker):
+
+    def __init__(self):
+        super().__init__()
+        self.unique = {
+            'ws': 0,
+            'comp': 0,
+            'prod': 0,
+        }
+
+    def price(self):
+        return self.f.random_int(min=100, max=10**4, step=100)
+
+    def amount(self):
+        # Similar to count
+        return self.f.random_int(min=1, max=20)
+
+    def remain(self):
+        return self.f.random_int(min=0, max=50)
+
+    def ws_name(self):
+        # ws1, ws2, ws3 ... wsn.
+        self.unique['ws'] += 1
+        return f"Цех{self.unique['ws']}"
+
+    def product_name(self):
+        # prod1, prod2, prod3 ... prodn.
+        self.unique['prod'] += 1
+        return f"Изделие{self.unique['prod']}"
+
+    def product_desc(self):
+        return Faker('la').text(100)
+
+    def component_name(self):
+        # comp1, comp2, comp3 ... compn.
+        self.unique['comp'] += 1
+        return f"Деталь{self.unique['comp']}"
+
+    def component_time(self):
+        # Random amount of time to create a component
+        return self.f.random_int(min=1, max=4)
+
+class MyFaker2(MainFaker):
+
+    def __init__(self):
+        super().__init__()
+        self.players = []
+
+    @property
+    def _player_id(self):
+        if not self.players:
+            self.players = fetch_many('player', prefix=False)
+            shuffle(self.players)
+        return self.players.pop()[0]
+
+    def height(self):
+        return self.f.random_int(min=170, max=210)
+
+    def weight(self):
+        return self.f.random_int(min=75, max=110)
+
+    def salary(self):
+        return self.f.random_int(min=50000, max=150000, step=5000)
+
+    def position(self):
+        return self.f.random_element(OrderedDict([
+            ('Голкипер', 0.2),
+            ('Защитник (левый)', 0.3),
+            ('Защитник (правый)', 0.3),
+            ('Нападающий (левый)', 0.4),
+            ('Нападающий (центральный)', 0.4),
+            ('Нападающий (правый)', 0.4),
+        ]))
+
+    def grip_type(self):
+        return self.f.random_element(OrderedDict([('Правша', 0.7), ('Левша', 0.3)]))
+
+    def skate_size(self):
+        return f'{self.f.random_int(min=39, max=47)}.{choice((0, 5))}'
+
+    def goals(self):
+        return self.f.random_int(min=0, max=100)
+
+    def assists(self):
+        return self.f.random_int(min=0, max=100)
+
+    def penalty_time(self):
+        return f"{self.f.random_int(min=0, max=3)}:{self.f.random_int(min=0, max=55, step=5)}"
+
+    def playtime(self):
+        return f"{self.f.random_int(min=0, max=36)}:{self.f.random_int(min=0, max=55, step=5)}"
+
 def main():
-    f = MarinaFaker()
+    f = MyFaker2()
     print(f._get_methods().keys())
     for i in range(12):
-        #print(f.type_plane(), f.cnt_plane())
-        #print(f.list_departure(), f.list_arrive(), f.list_length(), f.list_fuel())
-        #print(f.trip_code())
-        print(f.price_rate())
-        print(f.price_price())
-        print(f.trip_id)
-
+        # print(f.height(), f.weight(), f.salary(), f.position(), f.grip_type(), f.skate_size())
+        # print(f.goals(), f.assists(), f.penalty_time(), f.playtime())
+        print(f.player_id())
 
 if __name__ == '__main__':
     #insert(30)
